@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power.Lab</title>
+    <link rel="stylesheet" href="../index/index.css">
+    <link rel="stylesheet" href="Registrarse.css">
+    <!-- Cargar íconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="Encabezado">
+        <div class="Titulo-container">
+            <button class="Boton-Inicio">
+                <h1 class="Titulo-header">Power.Lab</h1>
+                <i class="fas fa-dumbbell" style="color: #d2cfcf; font-size: 48px;"></i>
+            </button>
+        </div>
+        <nav class="Menu-links">
+            <a href="#">PERFIL</a>
+            <a href="#">PRODUCTOS</a>
+            <a href="#">DESCUENTOS</a>
+        </nav>
+        <button class="Inicio-sesion">
+            Iniciar sesión/<br>Registrarse
+        </button>
+        <button class="Boton-carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="Contador">1</span>
+        </button>
+    </header>
+
+
+    <div class="Slate-1">
+        <form action="Registrarse.php" method="post">
+            <label for="NombreApellido">Nombre y Apellido:</label>
+            <input type="text" name="NombreApellido" id="NombreApellido"><br>
+
+            <label for="Email">Correo electronico:</label>
+            <input type="email" name="Email" id="Email" required><br>
+
+            <label for="Telefono">Telefono (opcional):</label>
+            <input type="tel" name="Telefono" id="Telefono"><br>
+
+            <label for="Clave1">Contraseña:</label>
+            <input type="password1" name="clave1" id="Clave1" required><br>
+
+            <label for="Clave2">Confirmar contraseña:</label>
+            <input type="password2" name="clave2" id="Clave2" required><br>
+
+            <button type="submit">Registrarse</button>
+            <p class="Txt-link-2">
+                Ya tenes cuenta ? <a href="#">Iniciar Sesion</a>
+            </p>
+        </form>
+    </div>
+
+
+
+    <footer class="Pie-pagina">
+        <div class="Slogan">
+            <p>
+                <span class="Resaltado-slogan">Power.Lab</span><br>
+                Suplementación<br><br>
+                Somos personas normales como tú,<br>
+                que nos gusta el deporte y el gimnasio<br>
+                y queremos ayudarte a mejorar.
+            </p>
+        </div>
+        <div class="ANMAT">
+            <p>
+                Productos regulados y verificados por la <span class="Resaltado-ANMAT">ANMAT</span>,<br> cumpliendo
+                requisitos de seguridad, calidad y registro.
+            </p>
+        </div>
+        <div class="Metodos-pago">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <img src="../index/mercadopago.png" alt="Mercado Pago">
+        </div>
+    </footer>
+</body>
+
+</html>
