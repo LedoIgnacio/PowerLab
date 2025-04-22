@@ -57,7 +57,6 @@ button
     cursor: pointer;
 }
 
-.Txt-link-2,
 .Txt-link-1
 {
     text-align: left;
@@ -67,7 +66,6 @@ button
     font-family: 'Copperplate', Serif;
 }
 
-.Txt-link-2 a,
 .Txt-link-1 a
 {
     text-decoration: underline;
