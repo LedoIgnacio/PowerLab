@@ -1,0 +1,89 @@
+.Slate-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    background-color: #333;
+    height: 500px;
+}
+
+.Box,
+.BoxDatos,
+.BoxBorrar {
+    background-color: #1a1a1a;
+    color: #d2cfcf;
+    padding: 10px;
+    font-family: "Copperplat", serif;
+    border: 1px solid #d2cfcf;
+    border-radius: 15px;
+    width: 250px;
+    box-sizing: border-box;
+    height: 180px;
+}
+
+.BoxCompras {
+    background-color: #1a1a1a;
+    color: #d2cfcf;
+    padding: 10px;
+    font-family: "Copperplat", serif;
+    border: 1px solid #d2cfcf;
+    border-radius: 15px;
+    width: 250px;
+    box-sizing: border-box;
+    height: 180px;
+}
+
+.Boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 15px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Copperplate', Serif;
+    transition: all 0.2s ease;
+    background-color: #d2cfcf;
+    font-size: 14px;
+}
+
+.Boton:hover {
+    background-color: #bdbdbd;
+    color: #111;
+}
+
+.BoxCompras,
+.BoxBorrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: #d2cfcf;
+    padding: 10px;
+    font-family: "Copperplate", Serif;
+    border: 1px solid #d2cfcf;
+    border-radius: 15px;
+    width: 250px;
+    box-sizing: border-box;
+    height: 180px;
+}
+
+.BoxCompras .Boton,
+.BoxBorrar .Boton {
+  font-size: 18px;
+}
+
+.Boton-rojo {
+    background-color: #d64545;
+    /* Rojo suave */
+    color: white;
+}
+
+.Boton-rojo:hover {
+    background-color: #b73131;
+    color: #fff;
+}
