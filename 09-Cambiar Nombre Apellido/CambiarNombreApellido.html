@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power.Lab</title>
     <link rel="stylesheet" href="../01-Index/Index.css">
-    <link rel="stylesheet" href="EliminarCuenta.css">
+    <link rel="stylesheet" href="CambiarNombreApellido.css">
     <!-- Cargar íconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -34,8 +34,10 @@
     </header>
 
     <div class="Slate-1">
-        <form action="/ruta-de-eliminacion" method="post">
-            <button type="submit">Eliminar Cuenta</button>
+        <form action="CambiarNombreApellido.php" method="post">
+            <label for="NombreApellido">Ingrese su nuevo Nombre y apellido:</label>
+            <input type="text" name="NombreApellido" id="NombreApellido"> 
+            <button type="submit">Cambiar</button>
         </form>
     </div>
 
