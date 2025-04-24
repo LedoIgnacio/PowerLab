@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power.Lab</title>
     <link rel="stylesheet" href="../01-Index/Index.css">
-    <link rel="stylesheet" href="Iniciar-Sesion.css">
+    <link rel="stylesheet" href="CargaAdmin.css">
     <!-- Cargar íconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -34,32 +34,21 @@
     </header>
 
     <div class="Cargar-Productos-Admin">
-        <!--<h2>Cargar Productos</h2>
-        <ul>
-            <li>Nombre y Marca del producto:</li>
-                <input class="CajaDeTexto" type="text" required>
-            <li>Imagen:</li>
-            <img src="imagenes/mi-foto.jpg" width="400">
-            <li>Descripcion del producto:</li>
-                <input class="CajaDeTexto" type="text" required>
-            <li>Descuentos (Opcional):</li>
-                <input class="CajaDeTexto" type="text">
-                <label for="arch01">Agregar Imagen:</label><br>
-                <input type="file" name="archivo" id="arch01"/><br><br>
-        </ul>-->
-
         <form action="AgregarProducto">
             <label for="NombreMarca">Nombre y Marca del producto:</label>
             <input type="text" name="NombreMarca" id="NombreMarca" required><br>
 
-            <label for="Imagen">Agregar Imagen:</label>
-            <input type="file" name="Imagen" id="Imagen"/><br>
+            <label for="Precio">Precio:</label>
+            <input type="number" name="Precio" id="Precio" required>
 
             <label for="Descripcion">Descripcion del producto:</label>
             <input type="text" name="Descripcion" id="Descripcion" required><br>
 
             <label for="Descuentos">Descuentos (Opcional):</label>
             <input type="text" name="Descuentos" id="Descuentos"><br>
+
+            <label for="Imagen">Agregar Imagen:</label>
+            <input type="file" name="Imagen" id="Imagen" required><br>
 
             <button type="submit">Cargar Producto</button>
         </form>
