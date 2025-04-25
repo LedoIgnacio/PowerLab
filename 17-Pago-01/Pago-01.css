@@ -1,0 +1,45 @@
+body
+h2 {
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+}
+
+h3 {
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif'; 
+}   
+
+#nombre {
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+}
+
+#apellido {
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+}
+
+#direccion {
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+}
+
+#ciudad {
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+}
+
+#CP {
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+}
+
+#info-adicional {
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+}
+
+p {
+    color: white;
+    font-family: 'Copperplate','Serif';
+}

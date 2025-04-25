@@ -1,0 +1,53 @@
+.finalizar{
+    background-color: #1a1a1a;
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+    margin-left: 400px;
+    width: 40%;
+    height: 250px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    top: -350px;
+    line-height: 2.5;
+}
+.datos {
+    padding: 5px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: black; 
+    color: #d2cfcf;
+    font-weight: bold;
+    border: ridge
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.entrega {
+    color: #d2cfcf;
+    font-family: 'Copperfield','Serif';
+    margin-left: 20px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.domicilio{
+    background-color: #1a1a1a;
+    color: #d2cfcf;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5px 5px;
+    width: 22%;
+    border-radius: 6px;
+    height: 80px;
+}

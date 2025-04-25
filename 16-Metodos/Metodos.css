@@ -1,0 +1,24 @@
+.iconos-pago {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    text-align: center;
+}
+h1
+{
+    color: #d2cfcf;
+    font-family: 'Copperplate','Serif';
+    font-size: 40px;
+}
+
+.iconos {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.iconos img {
+    width: 300px;
+}

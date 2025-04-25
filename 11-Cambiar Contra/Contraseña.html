@@ -5,45 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power.Lab</title>
-    <link rel="stylesheet" href="../01-Index/Index.css">
-    <link rel="stylesheet" href="CambiarContra.css">
+    <link rel="stylesheet" href="Contraseña.css">
+    <link rel="stylesheet" href="index.css">
     <!-- Cargar íconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
+
+
 <body>
     <header class="Encabezado">
         <div class="Titulo-container">
-            <a href="../01-Index/index.html" class="Boton-Inicio">
+            <button class="Boton-Inicio">
                 <h1 class="Titulo-header">Power.Lab</h1>
                 <i class="fas fa-dumbbell" style="color: #d2cfcf; font-size: 48px;"></i>
-              </a>
+            </button>
         </div>
         <nav class="Menu-links">
-            <a href="../07-Perfil/Perfil.html">PERFIL</a>
-            <a href="../13-Productos/Productos.html">PRODUCTOS</a>
-            <a href="../13-Productos/Productos.html">DESCUENTOS</a>
+            <a href="#">PERFIL</a>
+            <a href="#">PRODUCTOS</a>
+            <a href="#">DESCUENTOS</a>
         </nav>
-        <a href="../02-Registrarse/Registrarse.html" class="Inicio-sesion">
+        <button class="Inicio-sesion">
             Iniciar sesión/<br>Registrarse
-          </a>
-          <a href="#" class="Boton-carrito">
+        </button>
+        <button class="Boton-carrito">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="Contador">1</span>
-          </a>
+        </button>
     </header>
 
-    <div class="Slate-1">
-        <form action="CambiarContra.php" method="post">
-            <label for="Contraseña">Ingrese su nueva Contraseña:</label>
-            <input type="password" name="Contraseña" id="Contraseña" required>
-            <label for="Contraseña2">Confirmar Contraseña:</label>
-            <input type="password" name="Contraseña2" id="Contraseña2" required>
-            <button type="submit">Cambiar</button>
-        </form>
-    </div>
 
-    <footer class="Pie-pagina">
+
+
+
+<div class = "cambio-contraseña">
+    <h1>Cambiar contraseña</h1>
+    <p class = "parrafo">Vamos a enviarte un mail para que puedas cambiar tu contraseña y volver a ingresar. Escribe tu mail aqui abajo.</p>
+
+    <div class ="informacion">
+
+        <h3>Email:</h3>
+
+        <form>
+            <input type="text" id="mail" name="mail" placeholder="ej: tuemail@email.com" required>
+            <button type="submit"> Enviar Email</button>
+        </form>
+    
+    </div>
+    
+
+</div>
+
+
+
+
+
+
+
+
+    <footer class="Pie-pagina" >
         <div class="Slogan">
             <p>
                 <span class="Resaltado-slogan">Power.Lab</span><br>
@@ -55,15 +76,14 @@
         </div>
         <div class="ANMAT">
             <p>
-                Productos regulados y verificados por la <span class="Resaltado-ANMAT">ANMAT</span>,<br> cumpliendo
-                requisitos de seguridad, calidad y registro.
+                Productos regulados y verificados por la <span class="Resaltado-ANMAT">ANMAT</span>,<br> cumpliendo requisitos de seguridad, calidad y registro.
             </p>
         </div>
         <div class="Metodos-pago">
             <i class="fab fa-cc-visa"></i>
             <i class="fab fa-cc-mastercard"></i>
-            <img src="../01-Index/mercadopago.png" alt="Mercado Pago">
+            <img src="mercadopago.png" alt="Mercado Pago">
         </div>
     </footer>
 </body>
-</html>
+</html>   

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power.Lab</title>
+    <link rel="stylesheet" href="Pago-01.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- Cargar íconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+
+<body>
+    <header class="Encabezado">
+        <div class="Titulo-container">
+            <button class="Boton-Inicio">
+                <h1 class="Titulo-header">Power.Lab</h1>
+                <i class="fas fa-dumbbell" style="color: #d2cfcf; font-size: 48px;"></i>
+            </button>
+        </div>
+        <nav class="Menu-links">
+            <a href="#">PERFIL</a>
+            <a href="#">PRODUCTOS</a>
+            <a href="#">DESCUENTOS</a>
+        </nav>
+        <button class="Inicio-sesion">
+            Iniciar sesión/<br>Registrarse
+        </button>
+        <button class="Boton-carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="Contador">1</span>
+        </button>
+    </header>
+
+
+
+
+
+<div style = "display: flex; justify-content: space-between; align-items: flex-start">
+
+    <div style = "margin: 0; padding: 50px;">
+        <h2>Informacion de envio:</h2> 
+        <form id = "formulario-envio">
+            <label id="nombre" for="nombre">Nombre:</label><br>
+            <input type = "text" id = "nombre" name  = "nombre" required><br><br>
+
+            <label id = "apellido" for="apellido">Apellido:</label><br>
+            <input type = "text" id = "apellido" name  = "apellido" required><br><br>
+
+            <label id = "apellido" for="direccion">Direccion:</label><br>
+            <input type = "text" id = "direccion" name  = "direccion" required><br><br>
+
+            <label id = "ciudad" for="ciudad">Ciudad:</label><br>
+            <input type = "text" id = "ciudad" name  = "ciudad" required><br><br>
+
+            <label id = "CP" for="codigo-postal">Codigo Postal:</label><br>
+            <input type = "text" id = "codigo-postal" name  = "codigo-postal" required><br><br>
+
+            <label id = "info-adicional" for="info-adicional">Informacion adicional:</label><br>
+            <input type = "text" id = "info-adicional" name  = "info-adicional" required><br><br>
+
+            <button type = "submit">Enviar</button>
+
+        </form>
+    </div>
+
+    <div style = "margin: 0; padding: 100px;">
+        <h3> Entrega:</h3>
+            <p> Proximo dia habil<br><br>
+            Producto sin descuento.<br><br>
+            Total a pagar: 
+            </p>
+            <img src="https://simplicityar.vtexassets.com/arquivos/ids/166783-256-256?v=638246950183670000&width=256&height=256&aspect=true" alt="creatina">
+    </div>
+</div>   
+
+
+
+
+
+
+
+
+    <footer class="Pie-pagina" >
+        <div class="Slogan">
+            <p>
+                <span class="Resaltado-slogan">Power.Lab</span><br>
+                Suplementación<br><br>
+                Somos personas normales como tú,<br>
+                que nos gusta el deporte y el gimnasio<br>
+                y queremos ayudarte a mejorar.
+            </p>
+        </div>
+        <div class="ANMAT">
+            <p>
+                Productos regulados y verificados por la <span class="Resaltado-ANMAT">ANMAT</span>,<br> cumpliendo requisitos de seguridad, calidad y registro.
+            </p>
+        </div>
+        <div class="Metodos-pago">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <img src="mercadopago.png" alt="Mercado Pago">
+        </div>
+    </footer>
+</body>
+</html>
