@@ -1,45 +1,72 @@
-body
-h2 {
+h2
+{
     color: #d2cfcf;
     font-family: 'Copperplate','Serif';
+    font-size: 35px;
 }
 
-h3 {
+h3 
+{
     color: #d2cfcf;
     font-family: 'Copperplate','Serif'; 
 }   
 
-#nombre {
+#nombre 
+{
     color: #d2cfcf;
     font-family: 'Copperplate','Serif';
 }
 
-#apellido {
+#apellido 
+{
     color: #d2cfcf;
     font-family: 'Copperplate','Serif';
 }
 
-#direccion {
+#direccion 
+{
     color: #d2cfcf;
     font-family: 'Copperplate','Serif';
 }
 
-#ciudad {
+#ciudad 
+{
     color: #d2cfcf;
     font-family: 'Copperplate','Serif';
 }
 
-#CP {
+#CP 
+{
     color: #d2cfcf;
     font-family: 'Copperplate','Serif';
 }
 
-#info-adicional {
+#info-adicional 
+{
     color: #d2cfcf;
     font-family: 'Copperplate','Serif';
 }
 
-p {
+p 
+{
     color: white;
     font-family: 'Copperplate','Serif';
 }
+
+.Boton-continuar {
+    display: inline-block;      
+    margin-top: 20px;
+    background-color: #d2cfcf;
+    color: #111;
+    padding: 12px 24px;
+    font-family: 'Copperplate', Serif;
+    font-size: 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Boton-continuar:hover {
+    background-color: #999;
+  }

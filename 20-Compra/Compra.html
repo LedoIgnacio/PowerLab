@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power.Lab</title>
-    <link rel="stylesheet" href="../01-Index/Index.css">
-    <link rel="stylesheet" href="EliminarCuenta.css">
+    <link rel="stylesheet" href="Compra.css">
+    <link rel="stylesheet" href="../01-Index/index.css">
     <!-- Cargar íconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -33,10 +33,66 @@
         </a>
     </header>
 
-    <div class="Slate-1">
-        <form action="/ruta-de-eliminacion" method="post">
-            <button type="submit">Eliminar Cuenta</button>
-        </form>
+    <div class="producto">
+        <h2>Detalles de la compra:</h2>
+        <div class="producto-info">
+            <img src="https://simplicityar.vtexassets.com/arquivos/ids/166783-256-256?v=638246950183670000&width=256&height=256&aspect=true"
+                , alt="creatina">
+            <div class="descripcion">
+                <div>Nombre del producto</div>
+                <div>Precio</div>
+                <div>Detalles</div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div class="envio">
+        <select id="direccion" name="direccion" required>
+            <option value="" disabled selected>Direccion de envio</option>
+            <option value="Enero">Mi hogar</option>
+            <option value="Febrero">Nuestras sucursales</option>
+        </select>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>Precio de artículo: </td>
+                    <td>$1234</td>
+                </tr>
+                <tr>
+                    <td>Cargo de envío: </td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td><strong>Total: </strong></td>
+                    <td><strong>$1734</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="contenedor">
+        <div class="timeline">
+            <div class="estado completado">
+                <div class="circulo"></div>
+                <p>PAGADO</p>
+            </div>
+
+            <div class="estado completado">
+                <div class="circulo"></div>
+                <p>EN PREPARACION</p>
+            </div>
+
+            <div class="estado pendiente">
+                <div class="circulo"></div>
+                <p>ENVIADO</p>
+            </div>
+
+            <div class="estado pendiente">
+                <div class="circulo"></div>
+                <p>ENTREGADO</p>
+            </div>
+        </div>
     </div>
 
     <footer class="Pie-pagina">
@@ -62,4 +118,5 @@
         </div>
     </footer>
 </body>
+
 </html>
