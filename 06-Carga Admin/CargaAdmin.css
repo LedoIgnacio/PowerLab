@@ -57,3 +57,36 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+
+
+
+
+/* ---------------------------- */
+/*      RESPONSIVE - MOBILE     */
+/* ---------------------------- */
+@media (max-width: 768px) {
+  .Cargar-Productos-Admin {
+    padding: 40px 15px;
+  }
+
+  .Cargar-Productos-Admin form {
+    padding: 25px;
+    gap: 15px;
+  }
+
+  .Cargar-Productos-Admin label {
+    font-size: 14px;
+  }
+
+  .Cargar-Productos-Admin input[type="text"],
+  .Cargar-Productos-Admin input[type="file"],
+  .Cargar-Productos-Admin input[type="number"] {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .Cargar-Productos-Admin button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}

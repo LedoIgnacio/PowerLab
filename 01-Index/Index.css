@@ -491,3 +491,111 @@ body
     padding: 2px 2px;
     border-radius: 5px;
   }
+
+
+
+  
+
+/* ---------------------------- */
+/*        MODO RESPONSIVE       */
+/* ---------------------------- */
+
+@media (max-width: 768px) {
+    /* Header */
+    .Encabezado {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    .Titulo-container {
+      position: static;
+      justify-content: center;
+    }
+  
+    .Boton-Inicio {
+      position: static;
+      justify-content: center;
+    }
+  
+    .Menu-links {
+      position: static;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    .Inicio-sesion {
+      position: static;
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  
+    .Boton-carrito {
+      position: static;
+      font-size: 30px;
+    }
+  
+    /* Tarjetas */
+    .Slate-1, .Slate-2 {
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+    }
+  
+    .Tarjeta1, .Tarjeta2 {
+      width: 90%;
+      height: auto;
+    }
+  
+    .Tarjeta1 img, .Tarjeta2 img {
+      height: 200px;
+    }
+  
+    .Txt-boton1, .Txt-boton2 {
+      font-size: 18px;
+      padding: 12px 0;
+    }
+  
+    /* Separadores */
+    .Txt-Separador-1, .Txt-Separador-2, .Txt-Separador-3, .Txt-Separador-4 {
+      font-size: 24px;
+    }
+  
+    /* Especificaciones */
+    .Especificaciones {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .Envios, .M-pagos, .Compra-segura {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    /* Marcas */
+    .Marcas {
+      flex-direction: column;
+      gap: 20px;
+      height: auto;
+      padding: 30px 0;
+    }
+  
+    /* Footer */
+    .Pie-pagina {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+  
+    .Slogan, .ANMAT, .Metodos-pago {
+      padding: 10px;
+      flex: none;
+    }
+  
+    .Metodos-pago {
+      justify-content: center;
+    }
+  }
