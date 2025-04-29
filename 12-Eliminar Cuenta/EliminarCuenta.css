@@ -33,3 +33,25 @@ button
     border-radius: 12px;
     cursor: pointer;
 }
+
+
+
+/* ---------------------------- */
+/*      RESPONSIVE - MOBILE     */
+/* ---------------------------- */
+@media (max-width: 768px) {
+    .Slate-1 {
+      padding: 20px;
+      height: auto;
+    }
+  
+    form {
+      width: 90%;
+      padding: 25px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 12px;
+    }
+  }
