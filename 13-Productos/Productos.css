@@ -104,3 +104,81 @@
     font-size: 20px;
     text-decoration: none;
 }
+
+
+
+/* ---------------------------- */
+/*      RESPONSIVE - MOBILE     */
+/* ---------------------------- */
+@media (max-width: 768px) {
+
+    .Txt-Separador-1 {
+      font-size: 32px;
+      padding-left: 12px;
+      text-align: center;
+    }
+  
+    .Slate-1 {
+      flex-direction: column;
+      padding: 20px;
+      gap: 30px;
+    }
+  
+    .Filtro {
+      width: 100%;
+      padding: 15px;
+      font-size: 14px;
+    }
+  
+    .Filtro label {
+      font-size: 16px;
+    }
+  
+    .Filtro select {
+      font-size: 14px;
+      padding: 6px;
+    }
+  
+    .Catalogo {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  
+    .Producto {
+      width: 100%;
+      max-width: 100%;
+      font-size: 14px;
+    }
+  
+    .Imagen img {
+      height: 160px;
+    }
+  
+    .Boton-compra {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    .Txt {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Catalogo {
+      grid-template-columns: 1fr;
+    }
+  
+    .Txt-Separador-1 {
+      font-size: 26px;
+    }
+  
+    .Producto {
+      padding: 10px;
+    }
+  
+    .Imagen img {
+      height: 140px;
+    }
+  }
