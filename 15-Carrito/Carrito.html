@@ -41,43 +41,29 @@
 
   <div class="Carrito">
     <div class="Lista-productos">
-      <!-- Producto 1 -->
-      <div class="Item-carrito">
-        <img src="../01-Index/WheyProducto.jpg" alt="WheyProtein">
-        <div class="Info">
-          <h3>Whey Protein</h3>
-          <p>Precio: $38.900</p>
-          <p>Cantidad: 1</p>
-        </div>
-        <button class="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
-      </div>
-
-      <!-- Más productos... -->
-      <div class="Item-carrito">
-        <img src="../01-Index/WheyXpro.webp" alt="WheyXpro">
-        <div class="Info">
-          <h3>Whey X Pro</h3>
-          <p>Precio: $45.900</p>
-          <p>Cantidad: 1</p>
-        </div>
-        <button class="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
-      </div>
 
       <div class="Item-carrito">
         <img src="../01-Index/EnaCreatina.jpg" alt="EnaCreatina">
         <div class="Info">
           <h3>Creatina Micronizada</h3>
           <p>Precio: $38.000</p>
-          <p>Cantidad: 1</p>
+          <div class="Cantidad-control">
+            <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+            <input type="number" value="1" min="1" class="input-cantidad">
+            <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+          </div>
         </div>
-        <button class="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
       </div>
-    </div>
 
-    <div class="Resumen">
-      <p>Total: <strong>$122.800</strong></p>
-      <a href="../16-Pago-01/Pago-01.html" class="Boton-pago">Finalizar Compra</a>
+      <button class="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
+    
     </div>
+  </div>
+
+  <div class="Resumen">
+    <p>Total: <strong>$38.000</strong></p>
+    <a href="../16-Pago-01/Pago-01.html" class="Boton-pago">Finalizar Compra</a>
+  </div>
   </div>
 
   <footer class="Pie-pagina">
