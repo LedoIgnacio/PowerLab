@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power.Lab</title>
-    <link rel="stylesheet" href="../01-Index/Index.css">
-    <link rel="stylesheet" href="CambiarNombreApellido.css">
+    <link rel="stylesheet" href="../01-Index/index.css">
+    <link rel="stylesheet" href="MisCompras.css">
     <!-- Cargar íconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -17,7 +17,7 @@
             <a href="../01-Index/index.html" class="Boton-Inicio">
                 <h1 class="Titulo-header">Power.Lab</h1>
                 <i class="fas fa-dumbbell" style="color: #d2cfcf; font-size: 48px;"></i>
-              </a>
+            </a>
         </div>
         <nav class="Menu-links">
             <a href="../07-Perfil/Perfil.html">PERFIL</a>
@@ -27,19 +27,38 @@
         </nav>
         <a href="../02-Registrarse/Registrarse.html" class="Inicio-sesion">
             Iniciar sesión/<br>Registrarse
-          </a>
-          <a href="../16-Carrito/Carrito.html" class="Boton-carrito">
+        </a>
+        <a href="../16-Carrito/Carrito.html" class="Boton-carrito">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="Contador">1</span>
-          </a>
+        </a>
     </header>
 
-    <div class="Slate-1">
-        <form action="CambiarNombreApellido.php" method="post">
-            <label for="NombreApellido">Ingrese su nuevo Nombre y apellido:</label>
-            <input type="text" name="NombreApellido" id="NombreApellido"> 
-            <button type="submit">Cambiar</button>
-        </form>
+    <div class="Slate">
+        <div class="Compra-box">
+            <div class="Compra-info">
+                <div class="Compra-imagenes">
+                    <img src="../01-Index/EnaCreatina.jpg" alt="Producto 1">
+                </div>
+
+                <div class="Compra-datos">
+                    <p><strong>Total:</strong> $38.000</p>
+                </div>
+            </div>
+
+            <div class="Estado-compra">
+                <p><strong>Estado del pedido:</strong></p>
+                <div class="Linea-tiempo">
+                    <span class="estado activo">Pagado</span>
+                    <span class="separador"></span>
+                    <span class="estado">En preparación</span>
+                    <span class="separador"></span>
+                    <span class="estado">Enviado</span>
+                    <span class="separador"></span>
+                    <span class="estado">Entregado</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="Pie-pagina">
@@ -65,4 +84,5 @@
         </div>
     </footer>
 </body>
+
 </html>
