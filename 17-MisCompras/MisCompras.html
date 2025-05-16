@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power.Lab</title>
     <link rel="stylesheet" href="../01-Index/index.css">
-    <link rel="stylesheet" href="Pago-01.css">
+    <link rel="stylesheet" href="MisCompras.css">
     <!-- Cargar íconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -23,6 +23,7 @@
             <a href="../07-Perfil/Perfil.html">PERFIL</a>
             <a href="../13-Productos/Productos.html">PRODUCTOS</a>
             <a href="../13-Productos/Productos.html">DESCUENTOS</a>
+            <a href="../17-MisCompras/MisCompras.html">MIS COMPRAS</a>
         </nav>
         <a href="../02-Registrarse/Registrarse.html" class="Inicio-sesion">
             Iniciar sesión/<br>Registrarse
@@ -33,48 +34,35 @@
         </a>
     </header>
 
-    <div style="display: flex; justify-content: space-between; align-items: flex-start">
+    <div class="Slate">
+        <div class="Compra-box">
+            <div class="Compra-info">
+                <div class="Compra-imagenes">
+                    <img src="../01-Index/EnaCreatina.jpg" alt="Producto 1">
+                </div>
 
-        <div style="margin: 0; padding: 50px;">
-            <h2>Añadir nueva direccion:</h2>
-            <form id="formulario-envio">
-                <label id="nombre" for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre" required><br><br>
+                <div class="Compra-datos">
+                    <p><strong>Total:</strong> $38.000</p>
+                </div>
+            </div>
 
-                <label id="apellido" for="apellido">Apellido:</label><br>
-                <input type="text" id="apellido" name="apellido" required><br><br>
-
-                <label id="apellido" for="direccion">Direccion:</label><br>
-                <input type="text" id="direccion" name="direccion" required><br><br>
-
-                <label id="ciudad" for="ciudad">Ciudad:</label><br>
-                <input type="text" id="ciudad" name="ciudad" required><br><br>
-
-                <label id="CP" for="codigo-postal">Codigo Postal:</label><br>
-                <input type="text" id="codigo-postal" name="codigo-postal" required><br><br>
-
-                <label id="info-adicional" for="info-adicional">Informacion adicional:</label><br>
-                <input type="text" id="info-adicional" name="info-adicional" required><br><br>
-
-                <button type="submit">Enviar</button>
-
-            </form>
-        </div>
-
-        <div style="margin: 0; padding: 100px; display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <h3> Entrega:</h3>
-            <p> Proximo dia habil<br><br>
-                Producto sin descuento.<br><br>
-                Total a pagar:
-            </p>
-            <img src="https://simplicityar.vtexassets.com/arquivos/ids/166783-256-256?v=638246950183670000&width=256&height=256&aspect=true"
-                alt="creatina">
-
-            <a href="../17-Metodos Pago/MetodosPago.html" class="Boton-continuar">
-                CONTINUAR
-            </a>
+            <div class="Estado-compra">
+                <p><strong>Estado del pedido:</strong></p>
+                <div class="Linea-tiempo">
+                    <span class="estado activo">Pagado</span>
+                    <span class="separador"></span>
+                    <span class="estado">En preparación</span>
+                    <span class="separador"></span>
+                    <span class="estado">Enviado</span>
+                    <span class="separador"></span>
+                    <span class="estado">Entregado</span>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
 
     <footer class="Pie-pagina">
         <div class="Slogan">

@@ -9,10 +9,28 @@
   min-height: 600px;
 }
 
+.Filtro-tabla {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Copperplate", serif;
+  color: #d2cfcf;
+}
+
+.Filtro-tabla input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #d2cfcf;
+  color: #1a1a1a;
+}
+
 h2 
 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   color: #d2cfcf;
   font-family: "Copperplate", serif;
   font-size: 35px;

@@ -23,6 +23,7 @@
             <a href="../07-Perfil/Perfil.html">PERFIL</a>
             <a href="../13-Productos/Productos.html">PRODUCTOS</a>
             <a href="../13-Productos/Productos.html">DESCUENTOS</a>
+            <a href="../17-MisCompras/MisCompras.html">MIS COMPRAS</a>
         </nav>
         <a href="../02-Registrarse/Registrarse.html" class="Inicio-sesion">
             Iniciar sesión/<br>Registrarse
@@ -35,6 +36,12 @@
 
     <div class="container">
         <h2>Listado de Compras</h2>
+
+        <div class="Filtro-tabla">
+            <label for="buscar">Buscar por nombre o número de orden:</label>
+            <input type="text" id="buscar" placeholder="Ej: Juan o #0001" onkeyup="filtrarTabla()">
+        </div>
+        
         <table>
             <thead>
                 <tr>

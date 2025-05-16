@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power.Lab</title>
-    <link rel="stylesheet" href="../01-Index/Index.css">
-    <link rel="stylesheet" href="CambiarEmail.css">
+    <link rel="stylesheet" href="../01-Index/index.css">
+    <link rel="stylesheet" href="Pago.css">
     <!-- Cargar íconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -34,12 +34,20 @@
           </a>
     </header>
 
-    <div class="Slate-1">
-        <form action="CambiarEmail.php" method="post">
-            <label for="Email">Ingrese su nuevo Email:</label>
-            <input type="email" name="Email" id="Email" required> 
-            <button type="submit">Cambiar</button>
-        </form>
+    <div class="Slate">
+
+        <h1 class="Titulo">COMPRA</h1><br>
+        <h3>Dirección:</h3>
+        <p id="Direccion-cargada">La Carra 1234, CABA</p>
+        <br>
+        <h3>Total a pagar:</h3>
+        <p id="Total-pagar">$38.000</p>
+        <br>
+        <p class="Instruccion"><strong>Por favor transferir el monto al cvu: 000000123456789101112131<br>
+            y redirigirse a "Mis compras" donde al confirmar el pago, el vendedor
+            actualizara el estado de su pedido.
+        </strong></p>
+        <a href="../17-MisCompras/MisCompras.html" class="Boton-Redireccion">Mis Compras</a>
     </div>
 
     <footer class="Pie-pagina">
