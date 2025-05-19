@@ -7,24 +7,7 @@ function obtenerFiltroDesdeURL() {
 
     if (query.indexOf("categoria=") !== -1) {
         var valor = query.split("categoria=")[1];
-        valor = decodeURIComponent(valor);
-
-        // Match exacto con las categorías válidas
-        var categoriasValidas = [
-            "Recuperación",
-            "Energía",
-            "Creatina",
-            "Proteina",
-            "Preentreno",
-            "Preparación-GanadorPeso",
-            "Recetas"
-        ];
-
-        for (var i = 0; i < categoriasValidas.length; i++) {
-            if (valor.toLowerCase() === categoriasValidas[i].toLowerCase()) {
-                return categoriasValidas[i];
-            }
-        }
+        return decodeURIComponent(valor);
     }
 
     return null;

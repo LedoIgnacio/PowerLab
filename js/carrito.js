@@ -110,7 +110,11 @@ function actualizarTotal() {
 }
 
 function guardarTotal() {
-    alert("Simulación: compra por $" + document.querySelector(".Resumen p strong").innerText);
+    var totalTexto = document.querySelector(".Resumen p strong").innerText;
+    var totalNumero = totalTexto.replace("$", "").replace(".", "").trim();
+
+    // Redirigir al pago con el total como parámetro GET
+    window.location.href = "../17-Pago/Pago.html?total=" + encodeURIComponent(totalNumero);
 }
 
 document.addEventListener("DOMContentLoaded", function () {

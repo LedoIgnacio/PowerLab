@@ -9,10 +9,28 @@ function inicializarTarjetas() {
         tarjetas[i].addEventListener("click", function (evento) {
             evento.preventDefault();
 
-            var textoCategoria = this.querySelector("span").innerText;
-            var categoriaURL = encodeURIComponent(textoCategoria.trim());
+            // Mapeo manual del texto visual a categoría real
+            var texto = this.querySelector("span").innerText.trim().toLowerCase();
 
-            window.location.href = "../14-Productos/Productos.html?categoria=" + categoriaURL;
+            var mapaCategorias = {
+                "recuperación": "Recuperación",
+                "fuerza y resistencia": "Creatina",
+                "energía": "Energía",
+                "preparación y +peso": "Preparación-GanadorPeso",
+                "pancakes proteicos": "Recetas",
+                "keto pancakes": "Recetas",
+                "cupcakes proteicos": "Recetas"
+            };
+
+            var categoriaReal = mapaCategorias[texto];
+
+            if (categoriaReal) {
+                var url = "../14-Productos/Productos.html?categoria=" + encodeURIComponent(categoriaReal);
+                window.location.href = url;
+            } else {
+                // fallback: ir sin filtro
+                window.location.href = "../14-Productos/Productos.html";
+            }
         });
     }
 }

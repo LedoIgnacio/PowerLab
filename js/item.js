@@ -57,8 +57,11 @@ function cargarProducto(prod) {
     var boton = detalles.querySelector("button");
     boton.addEventListener("click", function () {
         var saborElegido = select.value;
+        var mensajeError = document.getElementById("error-sabor");
+        mensajeError.innerText = "";
+
         if (saborElegido === "Seleccionar") {
-            alert("Por favor seleccioná un sabor.");
+            mensajeError.innerText = "Por favor seleccioná un sabor.";
             return;
         }
 
@@ -78,7 +81,7 @@ function cargarProducto(prod) {
             actualizarCarrito(carrito.length);
         }
 
-        alert("Producto agregado al carrito.");
+        mensajeError.innerText = ""; // limpiar error anterior si todo salió bien
     });
 }
 
