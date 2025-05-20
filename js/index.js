@@ -12,7 +12,7 @@ function inicializarTarjetas() {
             // Mapeo manual del texto visual a categoría real
             var texto = this.querySelector("span").innerText.trim().toLowerCase();
 
-            var mapaCategorias = {
+            var Categorias = {
                 "recuperación": "Recuperación",
                 "fuerza y resistencia": "Creatina",
                 "energía": "Energía",
@@ -22,7 +22,7 @@ function inicializarTarjetas() {
                 "cupcakes proteicos": "Recetas"
             };
 
-            var categoriaReal = mapaCategorias[texto];
+            var categoriaReal = Categorias[texto];
 
             if (categoriaReal) {
                 var url = "../14-Productos/Productos.html?categoria=" + encodeURIComponent(categoriaReal);

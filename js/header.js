@@ -28,7 +28,6 @@ function actualizarCarrito(numero) {
     nodo.innerHTML = numero;
 }
 
-// ✅ Esperar que cargue el documento
 document.addEventListener("DOMContentLoaded", function () {
     actualizarHeader();
 });
