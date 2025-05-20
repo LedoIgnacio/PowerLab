@@ -1,7 +1,3 @@
-// -----------------------------
-// ITEM.JS
-// -----------------------------
-
 var carrito = [];
 
 function obtenerIdDesdeURL() {
@@ -22,28 +18,23 @@ function buscarProductoPorId(id) {
 }
 
 function cargarProducto(prod) {
-    // Imagen principal
     var imagenes = document.querySelector(".Imagenes");
-    imagenes.innerHTML = ""; // limpiar
+    imagenes.innerHTML = "";
 
     var img = document.createElement("img");
     img.src = "../01-Index/" + prod.imagen;
     img.alt = prod.nombre;
-
     imagenes.appendChild(img);
 
-    // Detalles
     var detalles = document.querySelector(".Detalles");
     detalles.querySelector("h2").innerText = prod.nombre;
 
     var parrafo = detalles.querySelectorAll(".Txt-Detalles")[0];
     parrafo.innerHTML = "Precio: $" + prod.precio + " / Envío: $3000";
 
-    // Descripción
     var descripcion = detalles.querySelectorAll(".Txt-Detalles")[1];
     descripcion.innerHTML = "Descripción:<br><br>" + prod.descripcion;
 
-    // Sabores
     var select = document.getElementById("Sabores");
     select.innerHTML = "<option value='Seleccionar'>Seleccionar</option>";
     for (var i = 0; i < prod.sabores.length; i++) {
@@ -53,7 +44,6 @@ function cargarProducto(prod) {
         select.appendChild(opt);
     }
 
-    // Botón
     var boton = detalles.querySelector("button");
     boton.addEventListener("click", function () {
         var saborElegido = select.value;
@@ -65,23 +55,16 @@ function cargarProducto(prod) {
             return;
         }
 
-        var itemCarrito = {
-            id: prod.id,
-            nombre: prod.nombre,
-            precio: prod.precio,
-            imagen: prod.imagen,
-            sabor: saborElegido,
-            cantidad: 1
-        };
+        // Redirige a carrito con los datos por URL
+        var link = "../16-Carrito/Carrito.html?";
+        link += "id=" + prod.id;
+        link += "&nombre=" + encodeURIComponent(prod.nombre);
+        link += "&precio=" + prod.precio;
+        link += "&imagen=" + prod.imagen;
+        link += "&sabor=" + encodeURIComponent(saborElegido);
+        link += "&cantidad=1";
 
-        // Sin .push() → forma básica
-        carrito[carrito.length] = itemCarrito;
-
-        if (typeof actualizarCarrito === "function") {
-            actualizarCarrito(carrito.length);
-        }
-
-        mensajeError.innerText = ""; // limpiar error anterior si todo salió bien
+        window.location.href = link;
     });
 }
 

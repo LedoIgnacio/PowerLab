@@ -81,14 +81,20 @@ th
   text-align: end;
 }
 
-.Filtro-de-pago 
-{
+.Filtro-preparacion,
+.Filtro-envio,
+.Filtro-entrega,
+.Filtro-de-pago {
   background-color: #1a1a1a;
   color: #d2cfcf;
   border-radius: 6px;
+  padding: 4px 6px;
+  border: none;
+  font-family: "Copperplate", serif;
 }
 
 tr:hover 
 {
   background-color: #f1f1f1;
 }
+

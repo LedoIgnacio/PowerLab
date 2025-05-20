@@ -41,7 +41,7 @@
             <label for="buscar">Buscar por nombre o número de orden:</label>
             <input type="text" id="buscar" placeholder="Ej: Juan o #0001" onkeyup="filtrarTabla()">
         </div>
-        
+
         <table>
             <thead>
                 <tr>
@@ -50,7 +50,10 @@
                     <th>Nombre del Comprador</th>
                     <th>Forma de Pago</th>
                     <th>Ubicación</th>
-                    <th>Confirmación de Pago</th>
+                    <th>Pago</th>
+                    <th>Preparación</th>
+                    <th>Envío</th>
+                    <th>Entrega</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,6 +67,24 @@
                         <select class="Filtro-de-pago">
                             <option value="no-pagado">No pagado</option>
                             <option value="pagado">Pagado</option>
+                        </select>
+                    </td>
+                    <td class="Estado-preparacion">
+                        <select class="Filtro-preparacion">
+                            <option value="no-preparado">No preparado</option>
+                            <option value="en-preparacion">En preparación</option>
+                        </select>
+                    </td>
+                    <td class="Estado-envio">
+                        <select class="Filtro-envio">
+                            <option value="no-enviado">No enviado</option>
+                            <option value="enviado">Enviado</option>
+                        </select>
+                    </td>
+                    <td class="Estado-entrega">
+                        <select class="Filtro-entrega">
+                            <option value="no-entregado">No entregado</option>
+                            <option value="entregado">Entregado</option>
                         </select>
                     </td>
                 </tr>
@@ -80,6 +101,24 @@
                             <option value="pagado">Pagado</option>
                         </select>
                     </td>
+                    <td class="Estado-preparacion">
+                        <select class="Filtro-preparacion">
+                            <option value="no-preparado">No preparado</option>
+                            <option value="en-preparacion">En preparación</option>
+                        </select>
+                    </td>
+                    <td class="Estado-envio">
+                        <select class="Filtro-envio">
+                            <option value="no-enviado">No enviado</option>
+                            <option value="enviado">Enviado</option>
+                        </select>
+                    </td>
+                    <td class="Estado-entrega">
+                        <select class="Filtro-entrega">
+                            <option value="no-entregado">No entregado</option>
+                            <option value="entregado">Entregado</option>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -94,6 +133,24 @@
                             <option value="pagado">Pagado</option>
                         </select>
                     </td>
+                    <td class="Estado-preparacion">
+                        <select class="Filtro-preparacion">
+                            <option value="no-preparado">No preparado</option>
+                            <option value="en-preparacion">En preparación</option>
+                        </select>
+                    </td>
+                    <td class="Estado-envio">
+                        <select class="Filtro-envio">
+                            <option value="no-enviado">No enviado</option>
+                            <option value="enviado">Enviado</option>
+                        </select>
+                    </td>
+                    <td class="Estado-entrega">
+                        <select class="Filtro-entrega">
+                            <option value="no-entregado">No entregado</option>
+                            <option value="entregado">Entregado</option>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -106,6 +163,24 @@
                         <select class="Filtro-de-pago">
                             <option value="no-pagado">No pagado</option>
                             <option value="pagado">Pagado</option>
+                        </select>
+                    </td>
+                    <td class="Estado-preparacion">
+                        <select class="Filtro-preparacion">
+                            <option value="no-preparado">No preparado</option>
+                            <option value="en-preparacion">En preparación</option>
+                        </select>
+                    </td>
+                    <td class="Estado-envio">
+                        <select class="Filtro-envio">
+                            <option value="no-enviado">No enviado</option>
+                            <option value="enviado">Enviado</option>
+                        </select>
+                    </td>
+                    <td class="Estado-entrega">
+                        <select class="Filtro-entrega">
+                            <option value="no-entregado">No entregado</option>
+                            <option value="entregado">Entregado</option>
                         </select>
                     </td>
                 </tr>
@@ -135,6 +210,9 @@
             <img src="../01-Index/mercadopago.png" alt="Mercado Pago">
         </div>
     </footer>
-</body>
 
+    <script src="../js/header.js"></script>
+    <script src="../js/estadoCompraAdmin.js"></script>
+
+</body>
 </html>

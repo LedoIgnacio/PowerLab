@@ -2,19 +2,45 @@
 // CARRITO.JS
 // -----------------------------
 
-var carrito = [
-    {
-        id: 3,
-        nombre: "Creatina Micronizada",
-        precio: 38000,
-        imagen: "EnaCreatina.jpg",
-        cantidad: 1
+var carrito = [];
+
+function cargarCarritoDesdeURL() {
+    var query = document.location.search;
+
+    if (query.indexOf("id=") !== -1) {
+        var datos = {};
+        var partes = query.substring(1).split("&");
+
+        for (var i = 0; i < partes.length; i++) {
+            var par = partes[i].split("=");
+            datos[par[0]] = decodeURIComponent(par[1]);
+        }
+
+        var item = {
+            id: parseInt(datos.id),
+            nombre: datos.nombre,
+            precio: parseInt(datos.precio),
+            imagen: datos.imagen,
+            sabor: datos.sabor,
+            cantidad: parseInt(datos.cantidad)
+        };
+
+        carrito[carrito.length] = item;
     }
-];
+}
 
 function renderizarCarrito() {
     var lista = document.querySelector(".Lista-productos");
-    lista.innerHTML = ""; // limpiar
+    lista.innerHTML = "";
+
+    var resumen = document.querySelector(".Resumen");
+
+    if (carrito.length === 0) {
+        resumen.style.display = "none";
+        return;
+    } else {
+        resumen.style.display = "block";
+    }
 
     for (var i = 0; i < carrito.length; i++) {
         var prod = carrito[i];
@@ -80,7 +106,6 @@ function renderizarCarrito() {
         btnEliminar.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
         btnEliminar.onclick = (function (index) {
             return function () {
-                // Quitar producto sin .splice
                 for (var j = index; j < carrito.length - 1; j++) {
                     carrito[j] = carrito[j + 1];
                 }
@@ -107,16 +132,17 @@ function actualizarTotal() {
 
     var resumen = document.querySelector(".Resumen p strong");
     resumen.innerText = "$" + total;
-}
 
-function guardarTotal() {
-    var totalTexto = document.querySelector(".Resumen p strong").innerText;
-    var totalNumero = totalTexto.replace("$", "").replace(".", "").trim();
-
-    // Redirigir al pago con el total como parámetro GET
-    window.location.href = "../17-Pago/Pago.html?total=" + encodeURIComponent(totalNumero);
+    var boton = document.querySelector(".Boton-pago");
+    if (total > 0) {
+        boton.href = "../17-Pago/Pago.html?total=" + total;
+        boton.style.display = "inline-block";
+    } else {
+        boton.style.display = "none";
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    cargarCarritoDesdeURL();
     renderizarCarrito();
 });
