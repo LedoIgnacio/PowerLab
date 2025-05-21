@@ -2,70 +2,100 @@
 // REGISTRARSE.JS
 // -----------------------------
 
-function validarNombreApellido(idInput, idError) {
-    var input = document.getElementById(idInput);
-    var texto = input.value.trim();
-    var error = "";
-
-    if (texto === "") {
-        error = "Este campo es obligatorio.";
-    } else if (texto.charAt(0) !== texto.charAt(0).toUpperCase()) {
-        error = "Debe comenzar con mayúscula.";
-    }
-
-    document.getElementById(idError).innerHTML = error;
-    document.getElementById(idError).style.color = "red";
-
-    return error === "";
+function mostrarError(idInput, mensaje) {
+    var span = document.getElementById("error-" + idInput);
+    span.innerText = mensaje;
+    span.style.color = "red";
 }
 
-function validarPassword(id1, id2, idError) {
-    var pass1 = document.getElementById(id1).value;
-    var pass2 = document.getElementById(id2).value;
-    var error = "";
+function limpiarError(idInput) {
+    var span = document.getElementById("error-" + idInput);
+    span.innerText = "";
+}
 
-    if (pass1 !== pass2) {
-        error = "Las contraseñas no coinciden.";
-    } else if (pass1.length < 6) {
-        error = "Debe tener al menos 6 caracteres.";
-    } else if (!/[A-Z]/.test(pass1)) {
-        error = "Debe contener al menos una mayúscula.";
-    } else if (!/[0-9]/.test(pass1)) {
-        error = "Debe contener al menos un número.";
+function validarNombreApellido() {
+    var input = document.getElementById("NombreApellido");
+    var texto = input.value.trim();
+
+    if (texto === "") {
+        mostrarError("NombreApellido", "Este campo es obligatorio.");
+        return false;
+    } else if (texto.charAt(0) !== texto.charAt(0).toUpperCase()) {
+        mostrarError("NombreApellido", "Debe comenzar con mayúscula.");
+        return false;
     }
 
-    document.getElementById(idError).innerHTML = error;
-    document.getElementById(idError).style.color = "red";
+    limpiarError("NombreApellido");
+    return true;
+}
 
-    return error === "";
+function validarEmail() {
+    var email = document.getElementById("Email").value.trim();
+
+    if (email === "") {
+        mostrarError("Email", "Debe ingresar un correo.");
+        return false;
+    } else if (!email.includes("@") || !email.includes(".")) {
+        mostrarError("Email", "Correo inválido.");
+        return false;
+    }
+
+    limpiarError("Email");
+    return true;
+}
+
+function validarPassword() {
+    var pass1 = document.getElementById("Clave1").value;
+    var pass2 = document.getElementById("Clave2").value;
+
+    if (pass1 === "" || pass2 === "") {
+        mostrarError("Clave2", "Debe completar ambos campos.");
+        return false;
+    } else if (pass1 !== pass2) {
+        mostrarError("Clave2", "Las contraseñas no coinciden.");
+        return false;
+    } else if (pass1.length < 6) {
+        mostrarError("Clave2", "Debe tener al menos 6 caracteres.");
+        return false;
+    } else if (!/[A-Z]/.test(pass1)) {
+        mostrarError("Clave2", "Debe contener al menos una mayúscula.");
+        return false;
+    } else if (!/[0-9]/.test(pass1)) {
+        mostrarError("Clave2", "Debe contener al menos un número.");
+        return false;
+    }
+
+    limpiarError("Clave2");
+    return true;
 }
 
 function validarFormularioRegistro(evento) {
-    var valido = true;
+    evento.preventDefault();
 
-    if (!validarNombreApellido("NombreApellido", "errorNombre")) valido = false;
-    if (!validarPassword("Clave1", "Clave2", "errorClave")) valido = false;
+    var ok1 = validarNombreApellido();
+    var ok2 = validarEmail();
+    var ok3 = validarPassword();
 
-    if (!valido) {
-        evento.preventDefault();
-    } else {
+    if (ok1 && ok2 && ok3) {
         usuarioNombre = document.getElementById("NombreApellido").value;
         if (typeof actualizarHeader === "function") {
             actualizarHeader();
         }
+        document.querySelector("form").reset();
     }
 }
 
 function prepararMensajesDeError() {
-    if (!document.getElementById("errorNombre")) {
-        var spanNombre = document.createElement("span");
-        spanNombre.id = "errorNombre";
-        document.getElementById("NombreApellido").after(spanNombre);
-    }
-    if (!document.getElementById("errorClave")) {
-        var spanClave = document.createElement("span");
-        spanClave.id = "errorClave";
-        document.getElementById("Clave2").after(spanClave);
+    var ids = ["NombreApellido", "Email", "Clave2"];
+    for (var i = 0; i < ids.length; i++) {
+        var campo = document.getElementById(ids[i]);
+        if (!document.getElementById("error-" + ids[i])) {
+            var span = document.createElement("span");
+            span.id = "error-" + ids[i];
+            span.style.display = "block";
+            span.style.marginTop = "4px";
+            campo.after(span);
+        }
     }
 }
 

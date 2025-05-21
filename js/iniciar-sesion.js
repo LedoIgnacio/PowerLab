@@ -6,12 +6,18 @@ function validarEmail(idInput, idError) {
     var texto = document.getElementById(idInput).value.trim();
     var error = "";
 
+    // Expresión regular simple para validar email
+    var patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (texto === "") {
         error = "Debe ingresar un correo.";
+    } else if (!patronCorreo.test(texto)) {
+        error = "El formato del correo no es válido.";
     }
 
-    document.getElementById(idError).innerHTML = error;
-    document.getElementById(idError).style.color = "red";
+    var span = document.getElementById(idError);
+    span.innerHTML = error;
+    span.style.color = "red";
 
     return error === "";
 }
@@ -28,8 +34,9 @@ function validarPassword(idInput, idError) {
         error = "Debe contener al menos un número.";
     }
 
-    document.getElementById(idError).innerHTML = error;
-    document.getElementById(idError).style.color = "red";
+    var span = document.getElementById(idError);
+    span.innerHTML = error;
+    span.style.color = "red";
 
     return error === "";
 }
@@ -51,15 +58,32 @@ function validarFormularioLogin(evento) {
 }
 
 function prepararMensajesDeError() {
+    // EMAIL
     if (!document.getElementById("errorEmail")) {
         var span = document.createElement("span");
         span.id = "errorEmail";
-        document.getElementById("Email").after(span);
+
+        var input = document.getElementById("Email");
+        var padre = input.parentNode;
+        if (input.nextSibling) {
+            padre.insertBefore(span, input.nextSibling);
+        } else {
+            padre.appendChild(span);
+        }
     }
+
+    // CONTRASEÑA
     if (!document.getElementById("errorClave")) {
         var span = document.createElement("span");
         span.id = "errorClave";
-        document.getElementById("Clave").after(span);
+
+        var input = document.getElementById("Clave");
+        var padre = input.parentNode;
+        if (input.nextSibling) {
+            padre.insertBefore(span, input.nextSibling);
+        } else {
+            padre.appendChild(span);
+        }
     }
 }
 

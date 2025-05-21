@@ -2,25 +2,50 @@
 // INICIAR-SESION-ADMIN.JS
 // -----------------------------
 
-function validarEmail(idInput, idError) {
-    var texto = document.getElementById(idInput).value.trim();
+function mostrarError(idInput, mensaje) {
+    var span = document.getElementById("error-" + idInput);
+    span.innerText = mensaje;
+    span.style.color = "red";
+}
+
+function limpiarError(idInput) {
+    var span = document.getElementById("error-" + idInput);
+    span.innerText = "";
+}
+
+function mostrarExito(mensaje) {
+    var mensajeFinal = document.getElementById("mensajeExito");
+    mensajeFinal.innerText = mensaje;
+    mensajeFinal.style.color = "green";
+}
+
+function validarEmail() {
+    var texto = document.getElementById("Email").value.trim();
+    var expresion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var error = "";
 
     if (texto === "") {
         error = "Debe ingresar un correo.";
+    } else if (!expresion.test(texto)) {
+        error = "Correo inválido.";
     }
 
-    document.getElementById(idError).innerHTML = error;
-    document.getElementById(idError).style.color = "red";
+    if (error !== "") {
+        mostrarError("Email", error);
+        return false;
+    }
 
-    return error === "";
+    limpiarError("Email");
+    return true;
 }
 
-function validarPassword(idInput, idError) {
-    var pass = document.getElementById(idInput).value;
+function validarPassword() {
+    var pass = document.getElementById("Clave").value;
     var error = "";
 
-    if (pass.length < 6) {
+    if (pass === "") {
+        error = "Debe ingresar una contraseña.";
+    } else if (pass.length < 6) {
         error = "Debe tener al menos 6 caracteres.";
     } else if (!/[A-Z]/.test(pass)) {
         error = "Debe contener al menos una mayúscula.";
@@ -28,39 +53,53 @@ function validarPassword(idInput, idError) {
         error = "Debe contener al menos un número.";
     }
 
-    document.getElementById(idError).innerHTML = error;
-    document.getElementById(idError).style.color = "red";
+    if (error !== "") {
+        mostrarError("Clave", error);
+        return false;
+    }
 
-    return error === "";
+    limpiarError("Clave");
+    return true;
 }
 
 function validarFormularioAdminLogin(evento) {
-    var valido = true;
+    evento.preventDefault();
 
-    if (!validarEmail("Email", "errorEmail")) valido = false;
-    if (!validarPassword("Clave", "errorClave")) valido = false;
+    var ok1 = validarEmail();
+    var ok2 = validarPassword();
 
-    if (!valido) {
-        evento.preventDefault();
-    } else {
+    if (ok1 && ok2) {
+        var email = document.getElementById("Email").value;
         var header = document.querySelector(".Inicio-sesion");
         var nuevo = document.createElement("span");
         nuevo.className = "Inicio-sesion";
-        nuevo.innerHTML = "ADMIN: Hola " + document.getElementById("Email").value;
+        nuevo.innerHTML = "ADMIN: Hola " + email;
         header.parentNode.replaceChild(nuevo, header);
+
+        mostrarExito("Inicio de sesión exitoso.");
+        document.querySelector("form").reset();
     }
 }
 
 function prepararMensajesDeError() {
-    if (!document.getElementById("errorEmail")) {
-        var span = document.createElement("span");
-        span.id = "errorEmail";
-        document.getElementById("Email").after(span);
+    var ids = ["Email", "Clave"];
+    for (var i = 0; i < ids.length; i++) {
+        if (!document.getElementById("error-" + ids[i])) {
+            var span = document.createElement("span");
+            span.id = "error-" + ids[i];
+            span.style.display = "block";
+            span.style.marginTop = "4px";
+            document.getElementById(ids[i]).after(span);
+        }
     }
-    if (!document.getElementById("errorClave")) {
-        var span = document.createElement("span");
-        span.id = "errorClave";
-        document.getElementById("Clave").after(span);
+
+    if (!document.getElementById("mensajeExito")) {
+        var exito = document.createElement("span");
+        exito.id = "mensajeExito";
+        exito.style.display = "block";
+        exito.style.marginTop = "10px";
+        var boton = document.querySelector("button");
+        boton.after(exito);
     }
 }
 

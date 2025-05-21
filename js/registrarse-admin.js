@@ -2,9 +2,25 @@
 // REGISTRARSE-ADMIN.JS
 // -----------------------------
 
-function validarNombreApellido(idInput, idError) {
-    var input = document.getElementById(idInput);
-    var texto = input.value.trim();
+function mostrarError(idInput, mensaje) {
+    var span = document.getElementById("error-" + idInput);
+    span.innerText = mensaje;
+    span.style.color = "red";
+}
+
+function limpiarError(idInput) {
+    var span = document.getElementById("error-" + idInput);
+    span.innerText = "";
+}
+
+function mostrarExito(mensaje) {
+    var mensajeFinal = document.getElementById("mensajeExito");
+    mensajeFinal.innerText = mensaje;
+    mensajeFinal.style.color = "green";
+}
+
+function validarNombreApellido() {
+    var texto = document.getElementById("NombreApellido").value.trim();
     var error = "";
 
     if (texto === "") {
@@ -13,15 +29,38 @@ function validarNombreApellido(idInput, idError) {
         error = "Debe comenzar con mayúscula.";
     }
 
-    document.getElementById(idError).innerHTML = error;
-    document.getElementById(idError).style.color = "red";
+    if (error !== "") {
+        mostrarError("NombreApellido", error);
+        return false;
+    }
 
-    return error === "";
+    limpiarError("NombreApellido");
+    return true;
 }
 
-function validarPassword(id1, id2, idError) {
-    var pass1 = document.getElementById(id1).value;
-    var pass2 = document.getElementById(id2).value;
+function validarEmail() {
+    var texto = document.getElementById("Email").value.trim();
+    var expresion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var error = "";
+
+    if (texto === "") {
+        error = "Debe ingresar un correo.";
+    } else if (!expresion.test(texto)) {
+        error = "Correo inválido.";
+    }
+
+    if (error !== "") {
+        mostrarError("Email", error);
+        return false;
+    }
+
+    limpiarError("Email");
+    return true;
+}
+
+function validarPassword() {
+    var pass1 = document.getElementById("Clave1").value;
+    var pass2 = document.getElementById("Clave2").value;
     var error = "";
 
     if (pass1 !== pass2) {
@@ -34,40 +73,53 @@ function validarPassword(id1, id2, idError) {
         error = "Debe contener al menos un número.";
     }
 
-    document.getElementById(idError).innerHTML = error;
-    document.getElementById(idError).style.color = "red";
+    if (error !== "") {
+        mostrarError("Clave2", error);
+        return false;
+    }
 
-    return error === "";
+    limpiarError("Clave2");
+    return true;
 }
 
 function validarFormularioAdmin(evento) {
-    var valido = true;
+    evento.preventDefault();
 
-    if (!validarNombreApellido("NombreApellido", "errorNombre")) valido = false;
-    if (!validarPassword("Clave1", "Clave2", "errorClave")) valido = false;
+    var okNombre = validarNombreApellido();
+    var okEmail = validarEmail();
+    var okPass = validarPassword();
 
-    if (!valido) {
-        evento.preventDefault();
-    } else {
-        // Reemplazar login header con texto de admin
+    if (okNombre && okEmail && okPass) {
         var header = document.querySelector(".Inicio-sesion");
         var nuevo = document.createElement("span");
         nuevo.className = "Inicio-sesion";
         nuevo.innerHTML = "ADMIN: Hola " + document.getElementById("NombreApellido").value;
         header.parentNode.replaceChild(nuevo, header);
+
+        mostrarExito("Registro exitoso.");
+        document.querySelector("form").reset();
     }
 }
 
 function prepararMensajesDeError() {
-    if (!document.getElementById("errorNombre")) {
-        var span = document.createElement("span");
-        span.id = "errorNombre";
-        document.getElementById("NombreApellido").after(span);
+    var campos = ["NombreApellido", "Email", "Clave2"];
+    for (var i = 0; i < campos.length; i++) {
+        if (!document.getElementById("error-" + campos[i])) {
+            var span = document.createElement("span");
+            span.id = "error-" + campos[i];
+            span.style.display = "block";
+            span.style.marginTop = "5px";
+            document.getElementById(campos[i]).after(span);
+        }
     }
-    if (!document.getElementById("errorClave")) {
-        var span = document.createElement("span");
-        span.id = "errorClave";
-        document.getElementById("Clave2").after(span);
+
+    if (!document.getElementById("mensajeExito")) {
+        var exito = document.createElement("span");
+        exito.id = "mensajeExito";
+        exito.style.display = "block";
+        exito.style.marginTop = "10px";
+        var boton = document.querySelector("button");
+        boton.after(exito);
     }
 }
 
