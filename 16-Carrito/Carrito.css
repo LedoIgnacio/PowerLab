@@ -95,15 +95,14 @@
 /* Resumen de compra */
 .Resumen 
 {
-    max-width: 800px;
-    margin: 40px auto 0;
-    text-align: right;
+  width: fit-content;
+  margin: 40px 40px 0 auto; /* alineado derecha */
+  text-align: right;
 }
 
-.Resumen p 
+.Resumen-contenido 
 {
-    font-size: 20px;
-    margin-bottom: 20px;
+  text-align: right;
 }
 
 /* Botón de pago */
