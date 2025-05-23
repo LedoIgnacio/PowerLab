@@ -35,157 +35,164 @@
     </header>
 
     <div class="container">
-        <h2>Listado de Compras</h2>
+        <div class="tabla-wrapper">
+            <h2>Listado de Compras</h2>
 
-        <div class="Filtro-tabla">
-            <label for="buscar">Buscar por nombre o número de orden:</label>
-            <input type="text" id="buscar" placeholder="Ej: Juan o #0001">
+            <div class="Filtro-tabla">
+                <label for="buscar">Buscar por nombre o número de orden:</label>
+                <input type="text" id="buscar" placeholder="Ej: Juan o #0001">
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número de Orden</th>
+                        <th>Total de la Compra</th>
+                        <th>Nombre del Comprador</th>
+                        <th>Forma de Pago</th>
+                        <th>Ubicación</th>
+                        <th>Pago</th>
+                        <th>Preparación</th>
+                        <th>Envío</th>
+                        <th>Entrega</th>
+                        <th>Compras</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#0001</td>
+                        <td>$38.900</td>
+                        <td>Juan Perez</td>
+                        <td>Visa</td>
+                        <td>La Carra 1234</td>
+                        <td class="Confirmacion-de-pago">
+                            <select class="Filtro-de-pago">
+                                <option value="no-pagado">No pagado</option>
+                                <option value="pagado">Pagado</option>
+                            </select>
+                        </td>
+                        <td class="Estado-preparacion">
+                            <select class="Filtro-preparacion">
+                                <option value="no-preparado">No preparado</option>
+                                <option value="en-preparacion">En preparación</option>
+                            </select>
+                        </td>
+                        <td class="Estado-envio">
+                            <select class="Filtro-envio">
+                                <option value="no-enviado">No enviado</option>
+                                <option value="enviado">Enviado</option>
+                            </select>
+                        </td>
+                        <td class="Estado-entrega">
+                            <select class="Filtro-entrega">
+                                <option value="no-entregado">No entregado</option>
+                                <option value="entregado">Entregado</option>
+                            </select>
+                        </td>
+                        <td><a href="../18-MisCompras/MisCompras.html" class="Ver-compras">Ver</a></td>
+                    </tr>
+                    <!-- duplicar <tr> para más registros -->
+                    <tr>
+                        <td>#0002</td>
+                        <td>$38.900</td>
+                        <td>Ignacio Ledo</td>
+                        <td>Visa</td>
+                        <td>Mexico 1462</td>
+                        <td class="Confirmacion-de-pago">
+                            <select class="Filtro-de-pago">
+                                <option value="no-pagado">No pagado</option>
+                                <option value="pagado">Pagado</option>
+                            </select>
+                        </td>
+                        <td class="Estado-preparacion">
+                            <select class="Filtro-preparacion">
+                                <option value="no-preparado">No preparado</option>
+                                <option value="en-preparacion">En preparación</option>
+                            </select>
+                        </td>
+                        <td class="Estado-envio">
+                            <select class="Filtro-envio">
+                                <option value="no-enviado">No enviado</option>
+                                <option value="enviado">Enviado</option>
+                            </select>
+                        </td>
+                        <td class="Estado-entrega">
+                            <select class="Filtro-entrega">
+                                <option value="no-entregado">No entregado</option>
+                                <option value="entregado">Entregado</option>
+                            </select>
+                        </td>
+                        <td><a href="../18-MisCompras/MisCompras.html" class="Ver-compras">Ver</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#0003</td>
+                        <td>$38.900</td>
+                        <td>Alejo Pisani</td>
+                        <td>Visa</td>
+                        <td>Sargento Cabral 1234</td>
+                        <td class="Confirmacion-de-pago">
+                            <select class="Filtro-de-pago">
+                                <option value="no-pagado">No pagado</option>
+                                <option value="pagado">Pagado</option>
+                            </select>
+                        </td>
+                        <td class="Estado-preparacion">
+                            <select class="Filtro-preparacion">
+                                <option value="no-preparado">No preparado</option>
+                                <option value="en-preparacion">En preparación</option>
+                            </select>
+                        </td>
+                        <td class="Estado-envio">
+                            <select class="Filtro-envio">
+                                <option value="no-enviado">No enviado</option>
+                                <option value="enviado">Enviado</option>
+                            </select>
+                        </td>
+                        <td class="Estado-entrega">
+                            <select class="Filtro-entrega">
+                                <option value="no-entregado">No entregado</option>
+                                <option value="entregado">Entregado</option>
+                            </select>
+                        </td>
+                        <td><a href="../18-MisCompras/MisCompras.html" class="Ver-compras">Ver</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#0004</td>
+                        <td>$38.900</td>
+                        <td>Ivan Finamore</td>
+                        <td>Visa</td>
+                        <td>Cabildo 1234</td>
+                        <td class="Confirmacion-de-pago">
+                            <select class="Filtro-de-pago">
+                                <option value="no-pagado">No pagado</option>
+                                <option value="pagado">Pagado</option>
+                            </select>
+                        </td>
+                        <td class="Estado-preparacion">
+                            <select class="Filtro-preparacion">
+                                <option value="no-preparado">No preparado</option>
+                                <option value="en-preparacion">En preparación</option>
+                            </select>
+                        </td>
+                        <td class="Estado-envio">
+                            <select class="Filtro-envio">
+                                <option value="no-enviado">No enviado</option>
+                                <option value="enviado">Enviado</option>
+                            </select>
+                        </td>
+                        <td class="Estado-entrega">
+                            <select class="Filtro-entrega">
+                                <option value="no-entregado">No entregado</option>
+                                <option value="entregado">Entregado</option>
+                            </select>
+                        <td><a href="../18-MisCompras/MisCompras.html" class="Ver-compras">Ver</a></td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Número de Orden</th>
-                    <th>Total de la Compra</th>
-                    <th>Nombre del Comprador</th>
-                    <th>Forma de Pago</th>
-                    <th>Ubicación</th>
-                    <th>Pago</th>
-                    <th>Preparación</th>
-                    <th>Envío</th>
-                    <th>Entrega</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>#0001</td>
-                    <td>$38.900</td>
-                    <td>Juan Perez</td>
-                    <td>Visa</td>
-                    <td>La Carra 1234</td>
-                    <td class="Confirmacion-de-pago">
-                        <select class="Filtro-de-pago">
-                            <option value="no-pagado">No pagado</option>
-                            <option value="pagado">Pagado</option>
-                        </select>
-                    </td>
-                    <td class="Estado-preparacion">
-                        <select class="Filtro-preparacion">
-                            <option value="no-preparado">No preparado</option>
-                            <option value="en-preparacion">En preparación</option>
-                        </select>
-                    </td>
-                    <td class="Estado-envio">
-                        <select class="Filtro-envio">
-                            <option value="no-enviado">No enviado</option>
-                            <option value="enviado">Enviado</option>
-                        </select>
-                    </td>
-                    <td class="Estado-entrega">
-                        <select class="Filtro-entrega">
-                            <option value="no-entregado">No entregado</option>
-                            <option value="entregado">Entregado</option>
-                        </select>
-                    </td>
-                </tr>
-                <!-- duplicar <tr> para más registros -->
-                <tr>
-                    <td>#0002</td>
-                    <td>$38.900</td>
-                    <td>Ignacio Ledo</td>
-                    <td>Visa</td>
-                    <td>Mexico 1462</td>
-                    <td class="Confirmacion-de-pago">
-                        <select class="Filtro-de-pago">
-                            <option value="no-pagado">No pagado</option>
-                            <option value="pagado">Pagado</option>
-                        </select>
-                    </td>
-                    <td class="Estado-preparacion">
-                        <select class="Filtro-preparacion">
-                            <option value="no-preparado">No preparado</option>
-                            <option value="en-preparacion">En preparación</option>
-                        </select>
-                    </td>
-                    <td class="Estado-envio">
-                        <select class="Filtro-envio">
-                            <option value="no-enviado">No enviado</option>
-                            <option value="enviado">Enviado</option>
-                        </select>
-                    </td>
-                    <td class="Estado-entrega">
-                        <select class="Filtro-entrega">
-                            <option value="no-entregado">No entregado</option>
-                            <option value="entregado">Entregado</option>
-                        </select>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>#0003</td>
-                    <td>$38.900</td>
-                    <td>Alejo Pisani</td>
-                    <td>Visa</td>
-                    <td>Sargento Cabral 1234</td>
-                    <td class="Confirmacion-de-pago">
-                        <select class="Filtro-de-pago">
-                            <option value="no-pagado">No pagado</option>
-                            <option value="pagado">Pagado</option>
-                        </select>
-                    </td>
-                    <td class="Estado-preparacion">
-                        <select class="Filtro-preparacion">
-                            <option value="no-preparado">No preparado</option>
-                            <option value="en-preparacion">En preparación</option>
-                        </select>
-                    </td>
-                    <td class="Estado-envio">
-                        <select class="Filtro-envio">
-                            <option value="no-enviado">No enviado</option>
-                            <option value="enviado">Enviado</option>
-                        </select>
-                    </td>
-                    <td class="Estado-entrega">
-                        <select class="Filtro-entrega">
-                            <option value="no-entregado">No entregado</option>
-                            <option value="entregado">Entregado</option>
-                        </select>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>#0004</td>
-                    <td>$38.900</td>
-                    <td>Ivan Finamore</td>
-                    <td>Visa</td>
-                    <td>Cabildo 1234</td>
-                    <td class="Confirmacion-de-pago">
-                        <select class="Filtro-de-pago">
-                            <option value="no-pagado">No pagado</option>
-                            <option value="pagado">Pagado</option>
-                        </select>
-                    </td>
-                    <td class="Estado-preparacion">
-                        <select class="Filtro-preparacion">
-                            <option value="no-preparado">No preparado</option>
-                            <option value="en-preparacion">En preparación</option>
-                        </select>
-                    </td>
-                    <td class="Estado-envio">
-                        <select class="Filtro-envio">
-                            <option value="no-enviado">No enviado</option>
-                            <option value="enviado">Enviado</option>
-                        </select>
-                    </td>
-                    <td class="Estado-entrega">
-                        <select class="Filtro-entrega">
-                            <option value="no-entregado">No entregado</option>
-                            <option value="entregado">Entregado</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <footer class="Pie-pagina">
@@ -211,4 +218,5 @@
         </div>
     </footer>
 </body>
+
 </html>

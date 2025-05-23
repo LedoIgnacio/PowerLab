@@ -1,19 +1,21 @@
-.container 
-{
-  max-width: 1000px;
+.container {
   margin: auto;
   background: #333;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
+  box-sizing: border-box;
   height: auto;
   min-height: 600px;
 }
 
+.tabla-wrapper {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .Filtro-tabla {
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   font-family: "Copperplate", serif;
   color: #d2cfcf;
 }
@@ -25,6 +27,8 @@
   border: none;
   background-color: #d2cfcf;
   color: #1a1a1a;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 h2 
@@ -92,6 +96,18 @@ th
   border: none;
   font-family: "Copperplate", serif;
 }
+
+.Ver-compras {
+  background-color: #d2cfcf;
+  color: #1a1a1a;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+}
+
 
 tr:hover 
 {
