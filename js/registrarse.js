@@ -27,11 +27,12 @@ function validarNombreApellido() {
 
 function validarEmail() {
     var email = document.getElementById("Email").value.trim();
+    var expresion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email === "") {
         mostrarError("Email", "Debe ingresar un correo.");
         return false;
-    } else if (!email.includes("@") || !email.includes(".")) {
+    } else if (!expresion.test(email)) {
         mostrarError("Email", "Correo inválido.");
         return false;
     }
