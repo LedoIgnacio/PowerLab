@@ -1,12 +1,7 @@
-// -----------------------------
-// CAMBIAR-CONTRASEÑA.JS
-// -----------------------------
-
 function validarEmail(idInput, idError) {
     var texto = document.getElementById(idInput).value.trim();
     var error = "";
 
-    // Validación básica
     if (texto === "") {
         error = "Debe ingresar un correo.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(texto)) {
@@ -26,7 +21,7 @@ function validarFormulario(evento) {
     if (!valido) {
         evento.preventDefault();
     } else {
-        evento.preventDefault(); // simulación
+        evento.preventDefault();
         var span = document.getElementById("errorMail");
         span.style.color = "green";
         span.innerText = "Se envió un email para cambiar tu contraseña.";

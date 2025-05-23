@@ -1,7 +1,3 @@
-// -----------------------------
-// DIRECCION.JS
-// -----------------------------
-
 function mostrarMensaje(idInput, mensaje, color) {
     var span = document.getElementById("error-" + idInput);
     span.innerText = mensaje;
@@ -51,14 +47,14 @@ function prepararMensajesDeError() {
 }
 
 function validarFormulario(evento) {
-    evento.preventDefault(); // siempre se evita el envío real
+    evento.preventDefault(); 
 
     var ok1 = validarDireccion();
     var ok2 = validarCiudad();
     var ok3 = validarCodigoPostal();
 
     var exito = document.getElementById("mensaje-exito");
-    if (exito) exito.remove(); // borrar viejo mensaje verde
+    if (exito) exito.remove(); 
 
     if (ok1 && ok2 && ok3) {
         var span = document.createElement("span");

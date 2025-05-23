@@ -1,7 +1,3 @@
-// -----------------------------
-// CAMBIAR-EMAIL.JS
-// -----------------------------
-
 function validarEmail(idInput, idError) {
     var email = document.getElementById(idInput).value.trim();
     var error = "";
@@ -25,7 +21,7 @@ function validarFormularioEmail(evento) {
     if (!valido) {
         evento.preventDefault();
     } else {
-        evento.preventDefault(); // Simulación
+        evento.preventDefault();
         var mensaje = document.getElementById("errorEmail");
         mensaje.style.color = "green";
         mensaje.innerText = "Tu correo fue actualizado correctamente.";

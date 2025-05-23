@@ -1,7 +1,3 @@
-// -----------------------------
-// INICIAR-SESION-ADMIN.JS
-// -----------------------------
-
 function mostrarError(idInput, mensaje) {
     var span = document.getElementById("error-" + idInput);
     span.innerText = mensaje;

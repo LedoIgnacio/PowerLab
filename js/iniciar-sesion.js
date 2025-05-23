@@ -1,12 +1,8 @@
-// -----------------------------
-// INICIAR-SESION.JS
-// -----------------------------
-
 function validarEmail(idInput, idError) {
     var texto = document.getElementById(idInput).value.trim();
     var error = "";
 
-    // Expresión regular simple para validar email
+    // Expresión regular para validar email
     var patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (texto === "") {

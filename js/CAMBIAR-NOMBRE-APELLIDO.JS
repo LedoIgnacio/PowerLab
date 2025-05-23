@@ -1,7 +1,3 @@
-// -----------------------------
-// CAMBIAR-NOMBRE-APELLIDO.JS
-// -----------------------------
-
 function validarNombreApellido(idInput, idError) {
     var texto = document.getElementById(idInput).value.trim();
     var error = "";
@@ -11,7 +7,6 @@ function validarNombreApellido(idInput, idError) {
     } else if (texto.charAt(0) !== texto.charAt(0).toUpperCase()) {
         error = "Debe comenzar con mayúscula.";
     }
-
     var span = document.getElementById(idError);
     span.innerHTML = error;
     span.style.color = "red";
@@ -26,7 +21,7 @@ function validarFormularioNombreApellido(evento) {
     if (!valido) {
         evento.preventDefault();
     } else {
-        evento.preventDefault(); // Simulación
+        evento.preventDefault();
         var mensaje = document.getElementById("errorNombreApellido");
         mensaje.style.color = "green";
         mensaje.innerText = "Tu nombre y apellido fueron actualizados correctamente.";

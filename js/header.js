@@ -1,10 +1,6 @@
-// -----------------------------
-// HEADER.JS
-// -----------------------------
-
 var usuarioNombre = null;
 var usuarioEmail = null;
-var esAdmin = false; // NUEVO: para indicar si el usuario es administrador
+var esAdmin = false; //indica si el usuario es admin
 
 function actualizarHeader() {
     var nodoLogin = document.querySelector(".Inicio-sesion");

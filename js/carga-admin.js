@@ -1,7 +1,3 @@
-// -----------------------------
-// CARGAR-PRODUCTO.JS
-// -----------------------------
-
 function mostrarError(idError, mensaje) {
     var span = document.getElementById(idError);
     span.innerText = mensaje;

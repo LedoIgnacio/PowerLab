@@ -1,7 +1,3 @@
-// -----------------------------
-// CAMBIAR-TELEFONO.JS
-// -----------------------------
-
 function validarTelefono(idInput, idError) {
     var telefono = document.getElementById(idInput).value.trim();
     var error = "";
@@ -26,7 +22,7 @@ function validarFormularioTelefono(evento) {
     if (!valido) {
         evento.preventDefault();
     } else {
-        evento.preventDefault(); // Simulación
+        evento.preventDefault();
         var mensaje = document.getElementById("errorTelefono");
         mensaje.style.color = "green";
         mensaje.innerText = "Tu número de teléfono fue actualizado correctamente.";
