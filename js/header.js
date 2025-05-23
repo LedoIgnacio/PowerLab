@@ -1,6 +1,6 @@
 var usuarioNombre = null;
 var usuarioEmail = null;
-var esAdmin = false; //indica si el usuario es admin
+var esAdmin = false; //si el usuario es admin
 
 function actualizarHeader() {
     var nodoLogin = document.querySelector(".Inicio-sesion");
@@ -26,11 +26,6 @@ function actualizarHeader() {
 
         padre.replaceChild(nuevoSpan, nodoLogin);
     }
-}
-
-function actualizarCarrito(numero) {
-    var nodo = document.querySelector(".Contador");
-    nodo.innerHTML = numero;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
