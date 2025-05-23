@@ -85,17 +85,19 @@ function validarPassword() {
 function validarFormularioAdmin(evento) {
     evento.preventDefault();
 
-    var okNombre = validarNombreApellido();
-    var okEmail = validarEmail();
-    var okPass = validarPassword();
+    var ok1 = validarNombreApellido();
+    var ok2 = validarEmail();
+    var ok3 = validarPassword();
 
-    if (okNombre && okEmail && okPass) {
-        var header = document.querySelector(".Inicio-sesion");
-        var nuevo = document.createElement("span");
-        nuevo.className = "Inicio-sesion";
-        nuevo.innerHTML = "ADMIN: Hola " + document.getElementById("NombreApellido").value;
-        header.parentNode.replaceChild(nuevo, header);
+    if (ok1 && ok2 && ok3) {
+        usuarioNombre = document.getElementById("NombreApellido").value;
+        esAdmin = true;
 
+        if (typeof actualizarHeader === "function") {
+            actualizarHeader();
+        }
+
+        
         mostrarExito("Registro exitoso.");
         document.querySelector("form").reset();
     }

@@ -69,12 +69,12 @@ function validarFormularioAdminLogin(evento) {
     var ok2 = validarPassword();
 
     if (ok1 && ok2) {
-        var email = document.getElementById("Email").value;
-        var header = document.querySelector(".Inicio-sesion");
-        var nuevo = document.createElement("span");
-        nuevo.className = "Inicio-sesion";
-        nuevo.innerHTML = "ADMIN: Hola " + email;
-        header.parentNode.replaceChild(nuevo, header);
+        usuarioEmail = document.getElementById("Email").value;
+        esAdmin = true;
+
+        if (typeof actualizarHeader === "function") {
+            actualizarHeader();
+        }
 
         mostrarExito("Inicio de sesión exitoso.");
         document.querySelector("form").reset();

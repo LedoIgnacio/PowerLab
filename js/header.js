@@ -4,6 +4,7 @@
 
 var usuarioNombre = null;
 var usuarioEmail = null;
+var esAdmin = false; // NUEVO: para indicar si el usuario es administrador
 
 function actualizarHeader() {
     var nodoLogin = document.querySelector(".Inicio-sesion");
@@ -11,15 +12,23 @@ function actualizarHeader() {
 
     if (usuarioNombre !== null || usuarioEmail !== null) {
         var nuevoSpan = document.createElement("span");
-        nuevoSpan.className = "Inicio-sesion"; // mantenemos estilos CSS
+        nuevoSpan.className = "Inicio-sesion";
 
-        if (usuarioNombre !== null) {
-            nuevoSpan.innerHTML = "Hola " + usuarioNombre;
+        if (esAdmin) {
+            if (usuarioNombre !== null) {
+                nuevoSpan.innerHTML = "ADMIN: Hola " + usuarioNombre;
+            } else {
+                nuevoSpan.innerHTML = "ADMIN: Hola " + usuarioEmail;
+            }
         } else {
-            nuevoSpan.innerHTML = "Hola " + usuarioEmail;
+            if (usuarioNombre !== null) {
+                nuevoSpan.innerHTML = "Hola " + usuarioNombre;
+            } else {
+                nuevoSpan.innerHTML = "Hola " + usuarioEmail;
+            }
         }
 
-        padre.replaceChild(nuevoSpan, nodoLogin); // reemplaza el <a> por <span>
+        padre.replaceChild(nuevoSpan, nodoLogin);
     }
 }
 

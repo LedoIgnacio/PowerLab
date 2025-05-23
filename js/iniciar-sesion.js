@@ -58,32 +58,24 @@ function validarFormularioLogin(evento) {
 }
 
 function prepararMensajesDeError() {
-    // EMAIL
     if (!document.getElementById("errorEmail")) {
-        var span = document.createElement("span");
-        span.id = "errorEmail";
+        var spanEmail = document.createElement("span");
+        spanEmail.id = "errorEmail";
+        spanEmail.style.display = "block";
+        spanEmail.style.marginTop = "4px";
 
-        var input = document.getElementById("Email");
-        var padre = input.parentNode;
-        if (input.nextSibling) {
-            padre.insertBefore(span, input.nextSibling);
-        } else {
-            padre.appendChild(span);
-        }
+        var inputEmail = document.getElementById("Email");
+        inputEmail.after(spanEmail);
     }
 
-    // CONTRASEÑA
     if (!document.getElementById("errorClave")) {
-        var span = document.createElement("span");
-        span.id = "errorClave";
+        var spanClave = document.createElement("span");
+        spanClave.id = "errorClave";
+        spanClave.style.display = "block";
+        spanClave.style.marginTop = "4px";
 
-        var input = document.getElementById("Clave");
-        var padre = input.parentNode;
-        if (input.nextSibling) {
-            padre.insertBefore(span, input.nextSibling);
-        } else {
-            padre.appendChild(span);
-        }
+        var inputClave = document.getElementById("Clave");
+        inputClave.after(spanClave);
     }
 }
 

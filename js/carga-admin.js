@@ -2,93 +2,110 @@
 // CARGAR-PRODUCTO.JS
 // -----------------------------
 
+function mostrarError(idError, mensaje) {
+    var span = document.getElementById(idError);
+    span.innerText = mensaje;
+    span.style.color = "red";
+}
+
+function limpiarError(idError) {
+    var span = document.getElementById(idError);
+    span.innerText = "";
+}
+
+function mostrarExito(mensaje) {
+    var span = document.getElementById("mensajeExito");
+    span.innerText = mensaje;
+    span.style.color = "green";
+}
+
 function validarTexto(idInput, idError) {
     var valor = document.getElementById(idInput).value.trim();
-    var error = "";
 
     if (valor === "") {
-        error = "Este campo es obligatorio.";
+        mostrarError(idError, "Este campo es obligatorio.");
+        return false;
+    } else if (valor.charAt(0) !== valor.charAt(0).toUpperCase()) {
+        mostrarError(idError, "Debe comenzar con mayúscula.");
+        return false;
     }
 
-    var span = document.getElementById(idError);
-    span.innerHTML = error;
-    span.style.color = "red";
-
-    return error === "";
+    limpiarError(idError);
+    return true;
 }
 
 function validarPrecio(idInput, idError) {
     var valor = document.getElementById(idInput).value.trim();
-    var error = "";
 
     if (valor === "") {
-        error = "Debe ingresar un precio.";
+        mostrarError(idError, "Debe ingresar un precio.");
+        return false;
     } else if (isNaN(valor) || parseFloat(valor) <= 0) {
-        error = "Ingrese un número válido mayor a cero.";
+        mostrarError(idError, "Ingrese un número válido mayor a cero.");
+        return false;
     }
 
-    var span = document.getElementById(idError);
-    span.innerHTML = error;
-    span.style.color = "red";
-
-    return error === "";
+    limpiarError(idError);
+    return true;
 }
 
 function validarImagen(idInput, idError) {
     var archivo = document.getElementById(idInput).value;
-    var error = "";
 
     if (archivo === "") {
-        error = "Debe seleccionar una imagen.";
+        mostrarError(idError, "Debe seleccionar una imagen.");
+        return false;
     } else {
-        var permitido = /\.(jpg|jpeg|png)$/i;
-        if (!permitido.test(archivo)) {
-            error = "Solo se permiten archivos JPG o PNG.";
+        var extensiones = /\.(jpg|jpeg|png)$/i;
+        if (!extensiones.test(archivo)) {
+            mostrarError(idError, "Solo se permiten archivos JPG o PNG.");
+            return false;
         }
     }
 
-    var span = document.getElementById(idError);
-    span.innerHTML = error;
-    span.style.color = "red";
-
-    return error === "";
+    limpiarError(idError);
+    return true;
 }
 
 function prepararMensajesDeError() {
-    var ids = ["NombreMarca", "Precio", "Descripcion", "Imagen"];
-    var errores = ["errorNombre", "errorPrecio", "errorDescripcion", "errorImagen"];
+    var campos = [
+        { id: "NombreMarca", errorId: "errorNombre" },
+        { id: "Precio", errorId: "errorPrecio" },
+        { id: "Descripcion", errorId: "errorDescripcion" },
+        { id: "Imagen", errorId: "errorImagen" }
+    ];
 
-    for (var i = 0; i < ids.length; i++) {
-        if (!document.getElementById(errores[i])) {
+    for (var i = 0; i < campos.length; i++) {
+        var campo = document.getElementById(campos[i].id);
+        if (!document.getElementById(campos[i].errorId)) {
             var span = document.createElement("span");
-            span.id = errores[i];
-            var input = document.getElementById(ids[i]);
-            var padre = input.parentNode;
-            if (input.nextSibling) {
-                padre.insertBefore(span, input.nextSibling);
-            } else {
-                padre.appendChild(span);
-            }
+            span.id = campos[i].errorId;
+            span.style.display = "block";
+            span.style.marginTop = "5px";
+            campo.after(span);
         }
+    }
+
+    if (!document.getElementById("mensajeExito")) {
+        var exito = document.createElement("span");
+        exito.id = "mensajeExito";
+        exito.style.display = "block";
+        exito.style.marginTop = "10px";
+        var boton = document.querySelector("button");
+        boton.after(exito);
     }
 }
 
 function validarFormularioCargar(evento) {
-    var valido = true;
+    evento.preventDefault();
 
-    if (!validarTexto("NombreMarca", "errorNombre")) valido = false;
-    if (!validarPrecio("Precio", "errorPrecio")) valido = false;
-    if (!validarTexto("Descripcion", "errorDescripcion")) valido = false;
-    if (!validarImagen("Imagen", "errorImagen")) valido = false;
+    var ok1 = validarTexto("NombreMarca", "errorNombre");
+    var ok2 = validarPrecio("Precio", "errorPrecio");
+    var ok3 = validarTexto("Descripcion", "errorDescripcion");
+    var ok4 = validarImagen("Imagen", "errorImagen");
 
-    if (!valido) {
-        evento.preventDefault();
-    } else {
-        evento.preventDefault(); // Simulación de envío
-        var exito = document.createElement("p");
-        exito.innerText = "Producto cargado correctamente.";
-        exito.style.color = "green";
-        document.querySelector("form").appendChild(exito);
+    if (ok1 && ok2 && ok3 && ok4) {
+        mostrarExito("Producto cargado correctamente.");
         document.querySelector("form").reset();
     }
 }
