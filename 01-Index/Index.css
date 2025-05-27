@@ -2,13 +2,6 @@
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-
 body
 {
     background-color: #333;
@@ -16,9 +9,6 @@ body
     height: 100%;
     margin: 0;
 }
-
-
-
 
 /* Estilos del header */
 .Encabezado 
@@ -518,7 +508,6 @@ body
     margin-bottom: 10px;
   }
   
-
 /* ---------------------------- */
 /*        MODO RESPONSIVE       */
 /* ---------------------------- */
