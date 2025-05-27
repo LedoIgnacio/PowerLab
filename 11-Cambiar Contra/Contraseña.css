@@ -1,6 +1,14 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .cambio-contraseña h1{
     margin-left: 10px;
-    width: 100%;
+    max-width: 600px;
     color: #d2cfcf;
     font-family: 'Copperfield','Serif';
 }
@@ -65,7 +73,7 @@ button {
     color: #d2cfcf;
     font-weight: bold;
     display: block;
-    margin: 10px,auto;
+    margin: 10px auto;
     justify-content: center;
     border: ridge;
 }

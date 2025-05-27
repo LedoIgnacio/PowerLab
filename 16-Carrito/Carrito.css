@@ -1,4 +1,12 @@
 /* Contenedor general del carrito */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 .Carrito 
 {
     background-color: #333;
@@ -154,4 +162,61 @@
 
 .btn-cantidad:hover {
   background-color: #bdbdbd;
+}
+
+@media (max-width: 768px) {
+    .Carrito {
+      padding: 30px 15px;
+      height: auto;
+    }
+  
+    .Item-carrito {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  
+    .Item-carrito img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      align-self: center;
+    }
+  
+    .Item-carrito .Info h3 {
+      font-size: 18px;
+    }
+  
+    .Item-carrito .Info p {
+      font-size: 14px;
+    }
+  
+    .Resumen {
+      margin: 30px auto 0;
+      text-align: center;
+    }
+  
+    .Resumen-contenido {
+      text-align: center;
+    }
+  
+    .Boton-pago {
+      font-size: 14px;
+      padding: 10px 16px;
+    }
+  
+    .Cantidad-control {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  
+    .input-cantidad {
+      width: 40px;
+      font-size: 14px;
+    }
+  
+    .btn-cantidad {
+      font-size: 16px;
+      padding: 4px 10px;
+    }
 }

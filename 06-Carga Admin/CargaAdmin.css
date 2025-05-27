@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .Cargar-Productos-Admin 
 {
     display: flex;
@@ -7,21 +16,25 @@
     background-color: #333;
     min-height: 100vh;
   }
+
+.Cargar-Productos-Admin input:focus {
+  outline: 2px solid #d2cfcf;
+}
   
-  .Cargar-Productos-Admin form 
-  {
-    background-color: #1a1a1a;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 500px;
-    color: #d2cfcf;
-    font-family: 'Copperplate', Serif;
-  }
+.Cargar-Productos-Admin form 
+{
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  color: #d2cfcf;
+  font-family: 'Copperplate', Serif;
+}
   
   /* Etiquetas */
   .Cargar-Productos-Admin label 

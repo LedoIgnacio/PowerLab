@@ -1,3 +1,11 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .Slate {
   background-color: #333;
   padding: 40px 20px;
@@ -50,4 +58,24 @@
 
 .Formulario-direccion button:hover {
   background-color: #bdbdbd;
+}
+
+@media (max-width: 768px) {
+  .Titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .Formulario-direccion {
+    width: 90%;
+    padding: 20px;
+    gap: 12px;
+  }
+  .Formulario-direccion label {
+    font-size: 14px;
+  }
+  .Formulario-direccion input,
+  .Formulario-direccion button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

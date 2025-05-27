@@ -1,3 +1,11 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
 .Slate-1 
 {
     display: flex;
@@ -76,3 +84,44 @@ button
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .Slate-1 {
+      flex-direction: column;
+      padding: 30px 20px;
+      gap: 30px;
+    }
+    .Imagenes,
+    .Detalles {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    .Detalles h2 {
+      font-size: 28px;
+      text-align: center;
+    }
+    select,
+    button {
+      width: 100%;
+      font-size: 14px;
+      padding: 12px;
+    }
+  }
+  
+  /* Móviles pequeños */
+  @media (max-width: 480px) {
+    .Slate-1 {
+      min-height: auto;
+      padding: 20px 10px;
+      gap: 20px;
+    }
+    .Detalles h2 {
+      font-size: 24px;
+    }
+    .Txt-Detalles {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .Imagenes img {
+      height: auto; /* que escale con el ancho */
+    }
+  }

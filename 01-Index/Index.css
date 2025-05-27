@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
 body
 {
     background-color: #333;
@@ -5,6 +16,9 @@ body
     height: 100%;
     margin: 0;
 }
+
+
+
 
 /* Estilos del header */
 .Encabezado 
@@ -160,7 +174,7 @@ body
     text-decoration: none;
     color: inherit;
     width: 260px;
-    height: 260px;
+    min-height: 260px;
     border: none;
     padding-top: 80px;
     background-color: #333;
@@ -228,7 +242,7 @@ body
     text-decoration: none;
     color: inherit;
     width: 260px;
-    height: 260px;
+    min-height: 260px;
     border: none;
     padding-top: 80px;
     background-color: #333;
@@ -493,7 +507,16 @@ body
   }
 
 
-
+  .contenedor-imagenes {
+    display: block;
+  }
+  
+  .contenedor-imagenes img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
   
 
 /* ---------------------------- */

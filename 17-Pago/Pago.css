@@ -1,3 +1,11 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .Slate {
   max-width: 600px;
   margin: 60px auto;
@@ -27,6 +35,10 @@
   margin: 0 0 15px;
 }
 
+.Slate p, .Slate h3 {
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
 .Instruccion {
   background-color: #333;
   padding: 15px;
@@ -35,6 +47,8 @@
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .Boton-Redireccion {

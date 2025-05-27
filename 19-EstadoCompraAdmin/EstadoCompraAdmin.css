@@ -1,3 +1,12 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   margin: auto;
   background: #333;
@@ -112,5 +121,38 @@ th
 tr:hover 
 {
   background-color: #f1f1f1;
+}
+
+@media (max-width: 600px) {
+  .tabla-wrapper {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px; /* asegura que tenga contenido para scrollear */
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .Filtro-tabla input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .Ver-compras {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
 }
 

@@ -1,3 +1,12 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .Slate {
   background-color: #333;
   padding: 40px 20px;
@@ -7,6 +16,9 @@
 }
 
 .Compra-box {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 30px;
   background-color: #1a1a1a;
   border: 1px solid #d2cfcf;
   border-radius: 15px;
@@ -25,9 +37,16 @@
   flex-wrap: wrap;
 }
 
+.Compra-imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 100%;
+}
+
 .Compra-imagenes img {
-  width: 80px;
-  height: 80px;
+  max-width: 150px;
+  height: auto;
   border-radius: 8px;
   object-fit: cover;
   margin-right: 10px;
@@ -87,6 +106,10 @@
 
   .Compra-datos {
     margin-top: 10px;
+  }
+
+  .Compra-datos p {
+    font-size: 16px;
   }
 
   .Linea-tiempo {

@@ -1,3 +1,11 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .Separador-1
 {
     height: 120px;
@@ -14,7 +22,7 @@
     margin: 0;
     padding: 25px 0;
     padding-left: 16px;
-    height: 50px;
+    min-height: 50px;
     background-color: #d2cfcf;
 }
 
@@ -50,6 +58,8 @@
 
 .Filtro select
 {
+    width: 100%;
+    box-sizing: border-box;
     border-radius: 6px;
     background-color: #d2cfcf;
     color: #1a1a1a;
