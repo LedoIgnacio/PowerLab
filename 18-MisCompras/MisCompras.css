@@ -92,6 +92,55 @@ html, body {
   margin-right: 8px;
 }
 
+.Compra-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.Compra-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #d2cfcf;
+}
+
+.Compra-detalles {
+  flex: 1;
+}
+
+.Compra-detalles h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.Compra-detalles p {
+  margin: 4px 0;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .Compra-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Compra-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .Compra-detalles h3 {
+    font-size: 16px;
+  }
+
+  .Compra-detalles p {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 600px) {
   .Compra-info {
     flex-direction: column;
