@@ -15,8 +15,9 @@ function mostrarExito(mensaje) {
     mensajeFinal.style.color = "green";
 }
 
-function validarNombreApellido() {
-    var texto = document.getElementById("NombreApellido").value.trim();
+// Valida NOMBRE
+function validarNombre() {
+    var texto = document.getElementById("Nombre").value.trim();
     var error = "";
 
     if (texto === "") {
@@ -26,11 +27,31 @@ function validarNombreApellido() {
     }
 
     if (error !== "") {
-        mostrarError("NombreApellido", error);
+        mostrarError("Nombre", error);
         return false;
     }
 
-    limpiarError("NombreApellido");
+    limpiarError("Nombre");
+    return true;
+}
+
+// Valida APELLIDO
+function validarApellido() {
+    var texto = document.getElementById("Apellido").value.trim();
+    var error = "";
+
+    if (texto === "") {
+        error = "Este campo es obligatorio.";
+    } else if (texto.charAt(0) !== texto.charAt(0).toUpperCase()) {
+        error = "Debe comenzar con mayúscula.";
+    }
+
+    if (error !== "") {
+        mostrarError("Apellido", error);
+        return false;
+    }
+
+    limpiarError("Apellido");
     return true;
 }
 
@@ -81,26 +102,26 @@ function validarPassword() {
 function validarFormularioAdmin(evento) {
     evento.preventDefault();
 
-    var ok1 = validarNombreApellido();
-    var ok2 = validarEmail();
-    var ok3 = validarPassword();
+    var okNombre = validarNombre();
+    var okApellido = validarApellido();
+    var okEmail = validarEmail();
+    var okPassword = validarPassword();
 
-    if (ok1 && ok2 && ok3) {
-        usuarioNombre = document.getElementById("NombreApellido").value;
+    if (okNombre && okApellido && okEmail && okPassword) {
+        usuarioNombre = document.getElementById("Nombre").value + " " + document.getElementById("Apellido").value;
         esAdmin = true;
 
         if (typeof actualizarHeader === "function") {
             actualizarHeader();
         }
 
-        
         mostrarExito("Registro exitoso.");
         document.querySelector("form").reset();
     }
 }
 
 function prepararMensajesDeError() {
-    var campos = ["NombreApellido", "Email", "Clave2"];
+    var campos = ["Nombre", "Apellido", "Email", "Clave2"];
     for (var i = 0; i < campos.length; i++) {
         if (!document.getElementById("error-" + campos[i])) {
             var span = document.createElement("span");

@@ -9,19 +9,61 @@ function limpiarError(idInput) {
     span.innerText = "";
 }
 
-function validarNombreApellido() {
-    var input = document.getElementById("NombreApellido");
+function validarNombre() {
+    var input = document.getElementById("Nombre");
     var texto = input.value.trim();
 
     if (texto === "") {
-        mostrarError("NombreApellido", "Este campo es obligatorio.");
+        mostrarError("Nombre", "Este campo es obligatorio.");
         return false;
     } else if (texto.charAt(0) !== texto.charAt(0).toUpperCase()) {
-        mostrarError("NombreApellido", "Debe comenzar con mayúscula.");
+        mostrarError("Nombre", "Debe comenzar con mayúscula.");
         return false;
     }
+    limpiarError("Nombre");
+    return true;
+}
 
-    limpiarError("NombreApellido");
+function validarApellido() {
+    var input = document.getElementById("Apellido");
+    var texto = input.value.trim();
+
+    if (texto === "") {
+        mostrarError("Apellido", "Este campo es obligatorio.");
+        return false;
+    } else if (texto.charAt(0) !== texto.charAt(0).toUpperCase()) {
+        mostrarError("Apellido", "Debe comenzar con mayúscula.");
+        return false;
+    }
+    limpiarError("Apellido");
+    return true;
+}
+
+function validarDireccion() {
+    var input = document.getElementById("Direccion");
+    var texto = input.value.trim();
+
+    if (texto === "") {
+        mostrarError("Direccion", "Este campo es obligatorio.");
+        return false;
+    }
+    if (texto.length < 5 || texto.length > 80) {
+        mostrarError("Direccion", "Debe tener entre 5 y 80 caracteres.");
+        return false;
+    }
+    if (!/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/.test(texto)) {
+        mostrarError("Direccion", "Debe contener al menos una letra.");
+        return false;
+    }
+    if (!/\d/.test(texto)) {
+        mostrarError("Direccion", "Debe contener al menos un número.");
+        return false;
+    }
+    if (!/^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s.,°º#/-]+$/.test(texto)) {
+        mostrarError("Direccion", "Solo se permiten letras, números y símbolos básicos (, . ° º # / -).");
+        return false;
+    }
+    limpiarError("Direccion");
     return true;
 }
 
@@ -69,12 +111,14 @@ function validarPassword() {
 function validarFormularioRegistro(evento) {
     evento.preventDefault();
 
-    var ok1 = validarNombreApellido();
-    var ok2 = validarEmail();
-    var ok3 = validarPassword();
+    var okNombre = validarNombre();
+    var okApellido = validarApellido();
+    var okDireccion = validarDireccion();
+    var okEmail = validarEmail();
+    var okPassword = validarPassword();
 
-    if (ok1 && ok2 && ok3) {
-        usuarioNombre = document.getElementById("NombreApellido").value;
+    if (okNombre && okApellido && okDireccion && okEmail && okPassword) {
+        usuarioNombre = document.getElementById("Nombre").value + " " + document.getElementById("Apellido").value;
         if (typeof actualizarHeader === "function") {
             actualizarHeader();
         }
@@ -83,7 +127,7 @@ function validarFormularioRegistro(evento) {
 }
 
 function prepararMensajesDeError() {
-    var ids = ["NombreApellido", "Email", "Clave2"];
+    var ids = ["Nombre", "Apellido", "Direccion", "Email", "Clave2"];
     for (var i = 0; i < ids.length; i++) {
         var campo = document.getElementById(ids[i]);
         if (!document.getElementById("error-" + ids[i])) {
