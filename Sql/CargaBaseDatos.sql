@@ -50,6 +50,9 @@ INSERT INTO pedido(id, id_usuario, fecha_hora, estado, total) VALUES
 (NULL, 2, '2025-06-06 16:30:00', "en_proceso", 56500),
 (NULL, 3, '2025-8-05 22:30:00', "carrito", 13000);
 
+UPDATE pedido SET total = 183600 WHERE id = 1;
+UPDATE pedido SET total = 76000 WHERE id = 2;
+UPDATE pedido SET total = 194500 WHERE id = 3;
 
 --CARGAR DETALLES DE PEDIDO
 INSERT INTO pedido_detalle(id, id_pedido, id_producto, cantidad, precio_uni) VALUES
