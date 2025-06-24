@@ -46,17 +46,18 @@ function validarPrecio(idInput, idError) {
 }
 
 function validarImagen(idInput, idError) {
-    var archivo = document.getElementById(idInput).value;
+    var url = document.getElementById(idInput).value.trim();
 
-    if (archivo === "") {
-        mostrarError(idError, "Debe seleccionar una imagen.");
+    if (url === "") {
+        mostrarError(idError, "Debe ingresar un link de imagen.");
         return false;
-    } else {
-        var extensiones = /\.(jpg|jpeg|png)$/i;
-        if (!extensiones.test(archivo)) {
-            mostrarError(idError, "Solo se permiten archivos JPG o PNG.");
-            return false;
-        }
+    }
+
+    // Chequear que sea link y termine con jpg/jpeg/png
+    var patronURL = /^(https?:\/\/)[\w\-\.]+(\.[a-z]{2,})(\/[\w\-\.\/#?=&%]*)*\.(jpg|jpeg|png)$/i;
+    if (!patronURL.test(url)) {
+        mostrarError(idError, "Debe ser un link válido y terminar en .jpg, .jpeg o .png");
+        return false;
     }
 
     limpiarError(idError);
