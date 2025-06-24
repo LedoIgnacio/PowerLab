@@ -46,13 +46,9 @@ INSERT INTO producto(id, nombre, marca, descripcion, precio, stock, imagen, cate
 
 --CARGAR PEDIDOS
 INSERT INTO pedido(id, id_usuario, fecha_hora, estado, total) VALUES
-(NULL, 1, '2025-01-04 14:30:00', "entregado", "200000"),
-(NULL, 2, '2025-06-06 16:30:00', "en_proceso", "56500"),
-(NULL, 3, '2025-20-05 22:30:00', "carrito", "13000");
-
-UPDATE pedido SET total = 183600 WHERE id = 1;
-UPDATE pedido SET total = 76000 WHERE id = 2;
-UPDATE pedido SET total = 194500 WHERE id = 3;
+(NULL, 1, '2025-01-04 14:30:00', "entregado", 200000),
+(NULL, 2, '2025-06-06 16:30:00', "en_proceso", 56500),
+(NULL, 3, '2025-8-05 22:30:00', "carrito", 13000);
 
 
 --CARGAR DETALLES DE PEDIDO
