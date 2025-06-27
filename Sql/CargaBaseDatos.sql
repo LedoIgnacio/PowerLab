@@ -102,6 +102,11 @@ INSERT INTO pedido_detalle(id, id_pedido, id_producto, cantidad, precio_uni) VAL
 --------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------
 
+SELECT usuario.nombre, 
+usuario.apellido, 
+pedido.fecha_hora
+FROM pedido
+INNER JOIN usuario ON pedido.id_usuario = usuario.id;
 
 
 
