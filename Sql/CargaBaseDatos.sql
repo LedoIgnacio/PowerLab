@@ -25,10 +25,8 @@ INSERT INTO usuario VALUES
 (6, "Mateo", "Martínez", "mateo.martinez@uca.edu.ar", "1133445566", "Belgrano 889", "7658", "usuario"),
 (7, "Bianca", "Sosa", "bianca.sosa@uca.edu.ar", "1144556677", "Rivadavia 3012", "6759", "usuario"),
 (8, "Joaquín", "Herrera", "joaquin.herrera@uca.edu.ar", "1155667788", "Corrientes 1743", "6765", "usuario"),
-(9, "Delfina", "Molina", "delfina.molina@uca.edu.ar", "1166778899", "Castelli 501", "8923", ""),
+(9, "Delfina", "Molina", "delfina.molina@uca.edu.ar", "1166778899", "Castelli 501", "8923", "usuario"),
 (10, "Nicolás", "Castro", "nicolas.castro@uca.edu.ar", "1177889900", "Mariano Castex 283", "1549", "usuario");
-
-UPDATE usuario SET tipo_usuario = 'usuario' WHERE id = 9;
 --------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------
 
@@ -105,19 +103,6 @@ INSERT INTO pedido_detalle(id, id_pedido, id_producto, cantidad, precio_uni) VAL
 --------------------------------------------------------------------------------------------------------
 
 
-
---INNER JOIN CON TODAS LAS TABLAS
-SELECT usuario.nombre, 
-usuario.apellido, 
-usuario.email, 
-producto.nombre, 
-producto.sabor, 
-pedido.fecha_hora, 
-pedido_detalle.cantidad, 
-pedido.total
-FROM (((pedido INNER JOIN usuario ON pedido.id_usuario = usuario.id)
-INNER JOIN pedido_detalle ON pedido_detalle.id_pedido = pedido.id)
-INNER JOIN producto ON pedido_detalle.id_producto = producto.id);
 
 
 
